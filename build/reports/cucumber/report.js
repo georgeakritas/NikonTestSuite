@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 124922,
+  "duration": 156418,
   "status": "passed"
 });
 formatter.scenario({
@@ -61,49 +61,49 @@ formatter.match({
       "offset": 55
     }
   ],
-  "location": "FirstPurchaseFlow_steps.groovy:18"
+  "location": "FirstPurchaseFlow_steps.groovy:17"
 });
 formatter.result({
-  "duration": 26653557585,
+  "duration": 22607157177,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:24"
+  "location": "FirstPurchaseFlow_steps.groovy:23"
 });
 formatter.result({
-  "duration": 11187588715,
+  "duration": 11621102142,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:31"
+  "location": "FirstPurchaseFlow_steps.groovy:30"
 });
 formatter.result({
-  "duration": 11426700725,
+  "duration": 8856402776,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:38"
+  "location": "FirstPurchaseFlow_steps.groovy:36"
 });
 formatter.result({
-  "duration": 13679139103,
+  "duration": 6071568231,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:45"
+  "location": "FirstPurchaseFlow_steps.groovy:43"
 });
 formatter.result({
-  "duration": 10719157845,
+  "duration": 6304917524,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:55"
+  "location": "FirstPurchaseFlow_steps.groovy:49"
 });
 formatter.result({
-  "duration": 12995080246,
+  "duration": 15840987758,
   "status": "passed"
 });
 formatter.after({
-  "duration": 29019,
+  "duration": 67239,
   "status": "passed"
 });
 });

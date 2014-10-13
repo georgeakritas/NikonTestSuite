@@ -161,6 +161,9 @@ class CartSSOandCheckout extends Page{
 	 */
 	public void ProcedeToCheckout(String proceedToCheckoutXpath){
 		ProceedToCheckoutXpath=proceedToCheckoutXpath
+		waitFor{
+			ProceedToCheckout.displayed
+		}
 		ProceedToCheckout.click()
 	}
 	/**This method will find the input for the promo code, add a value to that input, and click the 'Submit' butten 
@@ -419,6 +422,9 @@ class CartSSOandCheckout extends Page{
 		PwInputXpath=pwInputXpath
 		println loginButtonXpath
 		LoginButtonXpath=loginButtonXpath
+		waitFor{
+			UsernameInput.displayed
+		}
 		UsernameInput.value(userName)
 		PwInput.value(password)
 		LoginButton.click()

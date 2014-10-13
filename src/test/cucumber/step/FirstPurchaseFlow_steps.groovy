@@ -1,9 +1,8 @@
 import geb.*
 import java.awt.print.Pageable;
 import PDP
-import Cart
-import CheckoutPaymentDetail
-import CheckoutUserSelection
+import CartSSOandCheckout
+
 
 
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
@@ -31,24 +30,19 @@ Then(~'I add it to the cart'){->
 Then(~'I navigate to the cart'){ ->
 	def cartURLString = new String()
 	cartURLString='https://imageshop.nikontest.com/nikonstorefront/cart#'
-	Cart.setTesturl(cartURLString)
- to Cart
- sleep(2500)
+	CartSSOandCheckout.setTesturl(cartURLString)
+ to CartSSOandCheckout
 }
 Then(~'I proceed to check out'){ ->        
                
 	ProcedeToCheckout('aside.order-summary>section.summary-section>p>a.primary_cta>span.button_label') 
-	sleep(2500)
+
 }
 
 
 Then(~'I log in to SSO'){ ->
-	def SSOString= new String()
-	SSOString = 'https://sso.nikontest.com/ecommerce/home?locale=en_US&goto=https%3A%2F%2Fimageshop.nikontest.com%2Fnikonstorefront%2Fsso%3Fforward%3D%2Fnikonstorefront%2Fcart%2Fcheckout%26q%3DssoRedirect%253Dtrue'
-	CheckoutUserSelection.setTesturl(SSOString)
-	to CheckoutUserSelection
 	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123', 'form.existing-account-login>fieldset>div.field>input.email', 'form.existing-account-login>fieldset>div.field>input.password', 'form.existing-account-login>div.buttons>button.primary_cta')
-	sleep(5000)
+
 
 }
 
