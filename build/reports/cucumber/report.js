@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 146866,
+  "duration": 124922,
   "status": "passed"
 });
 formatter.scenario({
@@ -26,7 +26,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 7,
-  "name": "I have navigated to the PDP of product 1513",
+  "name": "I have navigated to the IMG PDP of the regular product 1513",
   "keyword": "Given "
 });
 formatter.step({
@@ -44,36 +44,66 @@ formatter.step({
   "name": "I proceed to check out",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:15"
+formatter.step({
+  "line": 11,
+  "name": "I log in to SSO",
+  "keyword": "Then "
 });
-formatter.result({
-  "duration": 32147971556,
-  "status": "passed"
+formatter.step({
+  "line": 12,
+  "name": "I complete the order",
+  "keyword": "Then "
 });
 formatter.match({
+  "arguments": [
+    {
+      "val": "1513",
+      "offset": 55
+    }
+  ],
   "location": "FirstPurchaseFlow_steps.groovy:18"
 });
 formatter.result({
-  "duration": 11900595673,
+  "duration": 26653557585,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:25"
+  "location": "FirstPurchaseFlow_steps.groovy:24"
 });
 formatter.result({
-  "duration": 6204744503,
+  "duration": 11187588715,
   "status": "passed"
 });
 formatter.match({
   "location": "FirstPurchaseFlow_steps.groovy:31"
 });
 formatter.result({
-  "duration": 11917219094,
+  "duration": 11426700725,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FirstPurchaseFlow_steps.groovy:38"
+});
+formatter.result({
+  "duration": 13679139103,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FirstPurchaseFlow_steps.groovy:45"
+});
+formatter.result({
+  "duration": 10719157845,
+  "status": "passed"
+});
+formatter.match({
+  "location": "FirstPurchaseFlow_steps.groovy:55"
+});
+formatter.result({
+  "duration": 12995080246,
   "status": "passed"
 });
 formatter.after({
-  "duration": 48483,
+  "duration": 29019,
   "status": "passed"
 });
 });
