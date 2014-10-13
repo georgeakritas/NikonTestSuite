@@ -20,9 +20,7 @@ Given(~'I have navigated to the IMG PDP of the regular product (.*)') { String S
 	PDP.setTesturl(urlstring)
 	 to PDP
 }
-Then(~'I add it to the cart'){->
-	//AddToCart('span.button_label')
-	//AddToCart('"span", text: "Add to Cart"')	
+Then(~'I add the product to the cart'){->
 	AddToCart('div.flex-item>div.primary-cta>a.cta>span.button_label')
 }
 
@@ -33,27 +31,28 @@ Then(~'I navigate to the cart'){ ->
 	CartSSOandCheckout.setTesturl(cartURLString)
  to CartSSOandCheckout
 }
-Then(~'I proceed to check out'){ ->        
-               
-	ProcedeToCheckout('aside.order-summary>section.summary-section>p>a.primary_cta>span.button_label') 
+
+
+Then(~'I proceed to check out'){ ->                     
+	ProcedeToCheckout() 
 
 }
 
 
-Then(~'I log in to SSO'){ ->
+Then(~'I log in to SSO as a regular registered user'){ ->
 	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123', 'form.existing-account-login>fieldset>div.field>input.email', 'form.existing-account-login>fieldset>div.field>input.password', 'form.existing-account-login>div.buttons>button.primary_cta')
-
-
 }
 
-Then(~ 'I complete the order'){ ->
-
-	CardVerification('input.cc-pw-input', '123')
-
+Then(~ 'I complete the order using a (.*)'){ String CardType ->
+	//visa , am-ex , discover , mastercard
+	def cardTypeString= new String()
+	cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CardType
+	SelectExistingCard(cardTypeString)
 	
+	//a#paymentChangeLink
+	
+	//CardVerification('input.cc-pw-input', '123')
 	SubmitPaymentInfo('div.field>input')//using this to click on the terms of services
-	
-
 	SubmitPaymentInfo('section.place-order-cc>a.primary_cta>span.button_label')
 
 }

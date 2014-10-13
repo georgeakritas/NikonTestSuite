@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 156418,
+  "duration": 131647,
   "status": "passed"
 });
 formatter.scenario({
@@ -31,7 +31,7 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "I add it to the cart",
+  "name": "I add the product to the cart",
   "keyword": "Then "
 });
 formatter.step({
@@ -46,12 +46,12 @@ formatter.step({
 });
 formatter.step({
   "line": 11,
-  "name": "I log in to SSO",
+  "name": "I log in to SSO as a regular registered user",
   "keyword": "Then "
 });
 formatter.step({
   "line": 12,
-  "name": "I complete the order",
+  "name": "I complete the order using a visa",
   "keyword": "Then "
 });
 formatter.match({
@@ -64,46 +64,52 @@ formatter.match({
   "location": "FirstPurchaseFlow_steps.groovy:17"
 });
 formatter.result({
-  "duration": 22607157177,
+  "duration": 22178595708,
   "status": "passed"
 });
 formatter.match({
   "location": "FirstPurchaseFlow_steps.groovy:23"
 });
 formatter.result({
-  "duration": 11621102142,
+  "duration": 11729829344,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:30"
+  "location": "FirstPurchaseFlow_steps.groovy:28"
 });
 formatter.result({
-  "duration": 8856402776,
+  "duration": 7086733403,
   "status": "passed"
 });
 formatter.match({
   "location": "FirstPurchaseFlow_steps.groovy:36"
 });
 formatter.result({
-  "duration": 6071568231,
+  "duration": 7898651368,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:43"
+  "location": "FirstPurchaseFlow_steps.groovy:42"
 });
 formatter.result({
-  "duration": 6304917524,
+  "duration": 7203623390,
   "status": "passed"
 });
 formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:49"
+  "arguments": [
+    {
+      "val": "visa",
+      "offset": 29
+    }
+  ],
+  "location": "FirstPurchaseFlow_steps.groovy:46"
 });
 formatter.result({
-  "duration": 15840987758,
+  "duration": 16672395763,
   "status": "passed"
 });
 formatter.after({
-  "duration": 67239,
+  "duration": 35035,
   "status": "passed"
 });
 });

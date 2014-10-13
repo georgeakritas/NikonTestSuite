@@ -7,11 +7,7 @@ import org.apache.xalan.xsltc.compiler.Import;
 import geb.*
 
 class CartSSOandCheckout extends Page{
-	static String PromoCodeButtonXpath;
-	static String PromoCodeInputXpath;
-	static String ProceedToCheckoutXpath;
 	static String RemoveProductXpath;
-	static String QTextinputxpath;
 	static String QuantityDropdownExpandXpath;
 	static String QuantityDropdownSelectXpath;
 	//CheckoutDeliveryOptionSelectStrings
@@ -19,39 +15,19 @@ class CartSSOandCheckout extends Page{
 	static String DeliveryDropdownExpandXpath;
 	static String DeliveryDropdownSelectXpath;
 	//Checkout Payment Detail Strings
-	static String SubmitXpath;
-	static String UDAXpath; //Use Delivery Address
-	static String YearInputXpath;
+	static String YearInputXpath; // probably standardize a date 12/18 or something
 	static String MonthInputXpath;
-	static String CardVerificationInputXpath;
-	static String CardInputXpath;
-	static String NameInputXpath;
-	static String SelectCardXpath;
-	static String DropdownExpandXpath;
-	static String DropdownSelectXpath;
+	
 	//Checkout Address Strings
-	static String SubmitAddressXpath;
-	static String PhoneXpath;
-	static String ZipXpath;
-	static String StateXpath;
-	static String TownXpath;
-	static String BuisnessXpath;
-	static String AddressLineTwoXpath;
-	static String AddressLineOneXpath;
+	
 	static String TitleExpandXpath;
 	static String TitleSelectXpath;
-	static String LastNameXpath;
-	static String FirstNameXpath;
+	
 	static String CountryExpandXpath;
 	static String CountrySelectXpath;
 	static String UseSavedAddresXpath;
 	static String CountryXpath;
-	//Checkout User selection/SSO strings
-	static String UsernameInputXpath;
-	static String PwInputXpath;
-	static String LoginButtonXpath;
-	static String ProceedButtonXpath;
-	static String EmailInputXpath;
+
 
 	
 	 public String getTesturl() {
@@ -65,28 +41,28 @@ class CartSSOandCheckout extends Page{
 	}
 
 	static content = {
-		quantityTextInput{$(QTextinputxpath)}
-		quantityDropDownexpand{$(QuantityDropdownExpandXpath)}
-		quantityDropDownSelect{$(QuantityDropdownSelectXpath)}
-		RemoveProduct{$(RemoveProductXpath)}
-		ProceedToCheckout{$(ProceedToCheckoutXpath)}
-		PromoCodeButton{$(PromoCodeButtonXpath)}
-		PromoCodeInput{$(PromoCodeInputXpath)}
-		//CheckoutDeliveryOptionSelectContent
+		quantityDropDownexpand{$(QuantityDropdownExpandXpath)} //#QuantityProduct_0 or 1 etc
+		quantityDropDownSelect{$(QuantityDropdownSelectXpath)} //TODO Pankaj 
+		RemoveProduct{$(RemoveProductXpath)} //#RemoveProduct_0 or 1 etc
+		ProceedToCheckout{$('aside.order-summary>section.summary-section>p>a.primary_cta>span.button_label')}
+		PromoCodeButton{$('span.action-input-btn')}
+		PromoCodeInput{$('#promotionCode')}
+		//CheckoutDeliveryOptionSelectContent   
+		ChangeDeliveryMethod{$('section.card.shipping-method')}
 		SelectDelivery{$(SelectDeliveryXpath)}
-		DeliveryDropdownExpand{$(DeliveryDropdownExpandXpath)}
-		DeliveryDropdownSelect{$(DeliveryDropdownSelectXpath)}
-		//Payment Details content
-		Submit{$(SubmitXpath)}
-		UDA{$(UDAXpath)}
-		YearInput{$(YearInputXpath)}
-		MonthInput{$(MonthInputXpath)}
-		CardVerificationInput{$(CardVerificationInputXpath)}
+		
+		//credit card payment Details content
+		Submit{$('section.place-order-cc>a.primary_cta>span.button_label')}
+		TermsAndConditions{$('div.field>input')}//TODO make T&C method George
+		ChangeCC{$('#paymentChangeLink')}
+		AddANewPaymentMethod{$('span.payment-info')}
+		UDA{$('#option-shipping-add-new-labelNew')}
+		YearInput{$(YearInputXpath)}//TODO Pankaj 
+		MonthInput{$(MonthInputXpath)}//TODO Pankaj 
+		CardVerificationInput{$('#ccv-code3New')}//for new cards only
 		CardInput{$(CardInputXpath)}
-		NameInput{$(NameInputXpath)}
-		SelectCard{$(SelectCardXpath)}
-		DropdownExpand{$(DropdownExpandXpath)}
-		DropdownSelect{$(DropdownSelectXpath)}
+		FirstNameInput{$('#first-name-new-1New')}
+		//TODO paypall stuff
 		//Address content
 		AddressSubmit{$(SubmitAddressXpath)}
 		Phone{$(PhoneXpath)}
@@ -134,11 +110,6 @@ class CartSSOandCheckout extends Page{
 	 * @param QTextinputxpath
 	 * @param quantity
 	 */
-	//1
-	public void UpdateQuantityTextInput(String qTextinputxpath, int quantity){
-		QTextinputxpath=qTextinputxpath
-		quantityTextInput.value(quantity)
-		}
 	//2
 	public void UpdateQuantityDropDown(String dropdownxpath, String selectxpath){
 		QuantityDropdownExpandXpath=dropdownxpath
@@ -159,9 +130,8 @@ class CartSSOandCheckout extends Page{
 	 * 
 	 * @param ProceedToCheckoutXpath
 	 */
-	public void ProcedeToCheckout(String proceedToCheckoutXpath){
-		ProceedToCheckoutXpath=proceedToCheckoutXpath
-		waitFor{
+	public void ProcedeToCheckout(){
+		waitFor(10000){
 			ProceedToCheckout.displayed
 		}
 		ProceedToCheckout.click()
@@ -169,12 +139,8 @@ class CartSSOandCheckout extends Page{
 	/**This method will find the input for the promo code, add a value to that input, and click the 'Submit' butten 
 	 * 
 	 * @param promoCode
-	 * @param promocodeInputXpath
-	 * @param promoCodeButtonXpath
 	 */
-	public void PromoCode(String promoCode, String promocodeInputXpath, String promoCodeButtonXpath){
-		PromoCodeInputXpath=promocodeInputXpath
-		PromoCodeButtonXpath=promoCodeButtonXpath
+	public void PromoCode(String promoCode){
 		PromoCodeInput.value(promoCode)
 		PromoCodeButton.click()
 		
@@ -188,45 +154,43 @@ class CartSSOandCheckout extends Page{
 	}
 	
 	//CheckoutDeliveryOption Methods
-	public void SelectDeliveryOption(String selectDeliveryXpath){
-		SelectDeliveryXpath=selectDeliveryXpath
-		SelectDelivery.click()
-	}
-	public void SelectDeliveryOptionDropdown(String dropdownExpandXpath, String dropdownSelectXpath ){
-		DeliveryDropdownExpandXpath=dropdownExpandXpath
-		DeliveryDropdownSelectXpath=dropdownSelectXpath
-		DeliveryDropdownExpand.click()
-		DeliveryDropdownSelect.click()
+	public void SelectDeliveryOption(String deliveryMethod){
+		waitFor(10000){	$('section.card.shipping-method').find('a.text-link').displayed
 		
+		}
+		$('section.card.shipping-method').find('a.text-link').click()
+		SelectDeliveryXpath = 'shippingMethod'+deliveryMethod //either 0, 1 or 2 // 0 ground, 1 two day air, 2 next day
+		waitFor(10000){
+			SelectDelivery.displayed
+		}
+		SelectDelivery.click()
+		$('section.card.shipping-method').find('span.button_label').click
 	}
 	
 	//Checkout payment info methods
-	/**This method clicks on a specified card type
-	 * @param selectCardXpath
-	 */
-	public void SelectCardType(String selectCardXpath){
-		SelectCardXpath=selectCardXpath
-		SelectCard.click()
+
+	public void SelectExistingCard(String CartTypeSelector){
+		waitFor(10000){
+			ChangeCC.displayed
+		}
 		
-	}
-	/**This method selects a credit card from a credit card drop down
-	 * @param dropdownExpandXpath
-	 * @param dropdownSelectXpath
-	 */
-	public void SelectCardTypeDropDown(String dropdownExpandXpath, String dropdownSelectXpath){
-		DropdownExpandXpath=dropdownExpandXpath
-		DropdownSelectXpath=dropdownSelectXpath
-		DropdownExpand.click()
-		DropdownSelect.click()
+		ChangeCC.click()
+		waitFor(10000){
+		$(CartTypeSelector).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
 		
-	}
+		}
+		$(CartTypeSelector).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
+		println "found parent of card type"
+		}
+
 	/**This inputs a name in to a text input
 	 * @param nameInputXpath
 	 * @param name
 	 */
-	public void NameOnCardInput(String nameInputXpath, String name){
-		NameInputXpath=nameInputXpath
-		NameInput.value(name)
+	public void NameOnCardInput(String firstName, String lastName){
+		
+		FirstNameInput.value(firstName)
+		LastNameInput.value(lastName)
 	}
 	
 	/**This inputs a card number in to a text input
