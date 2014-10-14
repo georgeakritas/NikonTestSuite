@@ -44,10 +44,8 @@ Then(~'I log in to SSO as a regular registered user'){ ->
 }
 
 Then(~ 'I complete the order using a (.*)'){ String CardType ->
-	//visa , am-ex , discover , mastercard
-	def cardTypeString= new String()
-	cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CardType
-	SelectExistingCard(cardTypeString)
+
+	SelectExistingCard(CardType)
 	
 	//a#paymentChangeLink
 	
