@@ -45,7 +45,7 @@ class CartSSOandCheckout extends Page{
 		SelectDelivery{$(SelectDeliveryXpath)}
 		//credit card payment Details content
 		Submit{$('section.place-order-cc>a.primary_cta>span.button_label')}
-		TermsAndConditions{$('div.field>input#conditions-req-checkbox')}//TODO make T&C method George
+		TermsAndConditions{$('#conditions-req-checkbox')}
 		ChangeCC{$('#paymentChangeLink')}
 		AddANewPaymentMethod{$('span.payment-info')}
 		UDA{$('#option-shipping-add-new-labelNew')}
@@ -313,6 +313,9 @@ class CartSSOandCheckout extends Page{
 		
 		public void SubmitPaymentInfo(){
 			println 'submitting T&C'
+			waitFor(10000){
+				TermsAndConditions.displayed
+			}
 			TermsAndConditions.click()
 			println 'submitting payment info'
 			Submit.click()
@@ -323,12 +326,16 @@ class CartSSOandCheckout extends Page{
 		 * @param CartTypeSelector
 		 */
 			public void SelectExistingCard(String CartTypeSelector){
+				
 				waitFor(10000){
 					ChangeCC.displayed
 				}
 				ChangeCC.click()
 				String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
+				waitFor{
+					$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
+				}
 				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
-				println "used that card"
+				
 				}
 }
