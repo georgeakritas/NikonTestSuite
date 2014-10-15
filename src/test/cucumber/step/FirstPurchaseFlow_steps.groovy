@@ -1,5 +1,7 @@
 import geb.*
+
 import java.awt.print.Pageable;
+
 import PDP
 import CartSSOandCheckout
 
@@ -9,8 +11,6 @@ this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(cucumber.api.groovy.EN)
 this.metaClass.mixin(geb.Browser)
 
-//def poc= new POC()
-//poc
 def urlstring = new String()
 
 
@@ -40,18 +40,15 @@ Then(~'I proceed to check out'){ ->
 
 
 Then(~'I log in to SSO as a regular registered user'){ ->
-	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123', 'form.existing-account-login>fieldset>div.field>input.email', 'form.existing-account-login>fieldset>div.field>input.password', 'form.existing-account-login>div.buttons>button.primary_cta')
-}
+	//LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123', 'form.existing-account-login>fieldset>div.field>input.email', 'form.existing-account-login>fieldset>div.field>input.password', 'form.existing-account-login>div.buttons>button.primary_cta')
+	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123')
+	}
 
 Then(~ 'I complete the order using a (.*)'){ String CardType ->
 
 	SelectExistingCard(CardType)
-	
 	//a#paymentChangeLink
-	
-	//CardVerification('input.cc-pw-input', '123')
-	SubmitPaymentInfo('div.field>input')//using this to click on the terms of services
-	SubmitPaymentInfo('section.place-order-cc>a.primary_cta>span.button_label')
+	SubmitPaymentInfo()
 
 }
 

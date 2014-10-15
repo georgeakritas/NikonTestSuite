@@ -45,7 +45,7 @@ class CartSSOandCheckout extends Page{
 		SelectDelivery{$(SelectDeliveryXpath)}
 		//credit card payment Details content
 		Submit{$('section.place-order-cc>a.primary_cta>span.button_label')}
-		TermsAndConditions{$('div.field>input')}//TODO make T&C method George
+		TermsAndConditions{$('div.field>input#conditions-req-checkbox')}//TODO make T&C method George
 		ChangeCC{$('#paymentChangeLink')}
 		AddANewPaymentMethod{$('span.payment-info')}
 		UDA{$('#option-shipping-add-new-labelNew')}
@@ -55,7 +55,7 @@ class CartSSOandCheckout extends Page{
 		CardInput{$('#cc-num3New')}
 		CardFirstNameInput{$('#first-name-new-1New')}
 		CardLastNameInput{$('#last-name-new-2New')}
-		//TODO paypall stuff
+		//TODO George paypall stuff
 		//Address content
 		AddressSubmit{$('a.primary_cta>span.button_label')}
 		Phone{$(PhoneXpath)}
@@ -305,12 +305,15 @@ class CartSSOandCheckout extends Page{
 			YearInput.value(year)
 		}
 		/**This method selects the delivery address as the billing address
+		 * arvato.csr@outlook.com
 		 */
 		public void UseDeliveryAddress(){
 			UDA.click()
 		}
 		
 		public void SubmitPaymentInfo(){
+			println 'submitting T&C'
+			TermsAndConditions.click()
 			println 'submitting payment info'
 			Submit.click()
 		}
@@ -325,10 +328,6 @@ class CartSSOandCheckout extends Page{
 				}
 				ChangeCC.click()
 				String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
-				waitFor(10000){
-				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
-				println "found parent of card type"
-				}
 				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
 				println "used that card"
 				}

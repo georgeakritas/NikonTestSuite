@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 131647,
+  "duration": 141199,
   "status": "passed"
 });
 formatter.scenario({
@@ -64,52 +64,9 @@ formatter.match({
   "location": "FirstPurchaseFlow_steps.groovy:17"
 });
 formatter.result({
-  "duration": 22178595708,
+  "duration": 24105406965,
   "status": "passed"
 });
 formatter.match({
   "location": "FirstPurchaseFlow_steps.groovy:23"
-});
-formatter.result({
-  "duration": 11729829344,
-  "status": "passed"
-});
-formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:28"
-});
-formatter.result({
-  "duration": 7086733403,
-  "status": "passed"
-});
-formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:36"
-});
-formatter.result({
-  "duration": 7898651368,
-  "status": "passed"
-});
-formatter.match({
-  "location": "FirstPurchaseFlow_steps.groovy:42"
-});
-formatter.result({
-  "duration": 7203623390,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "visa",
-      "offset": 29
-    }
-  ],
-  "location": "FirstPurchaseFlow_steps.groovy:46"
-});
-formatter.result({
-  "duration": 16672395763,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 35035,
-  "status": "passed"
-});
 });
