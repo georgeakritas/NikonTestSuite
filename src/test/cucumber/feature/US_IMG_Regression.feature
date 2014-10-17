@@ -3,7 +3,7 @@ These test cases will be deployed against the US IMG Nikon Site
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-1 - Fully Shipped Order
-Given I have navigated to the IMG PDP of the regular product 1513
+Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
@@ -13,7 +13,7 @@ Then I complete the order using a visa
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-2 - Partially Shipped Order  
-Given I have navigated to the IMG PDP of the regular product 1513
+Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
@@ -79,7 +79,7 @@ Then I complete the order using a am-ex
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-19 - Digital Product + Regular Item 
-Given I have navigated to the IMG PDP of the regular product 1513
+Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product VSA56406
 Then I add the product to the cart
@@ -89,7 +89,7 @@ Then I complete the order using a visa
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-21 - IMG - Complete Returns
-Given I have navigated to the IMG PDP of the regular product 1513
+Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
@@ -99,7 +99,131 @@ Then I complete the order using a visa
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-22 - IMG - Partial Returns
+Given I have navigated to the IMG PDP of the regular product 1503
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a visa
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-23 - IMG - Order Canceled in SAP (After Custom time frame)
+Given I have navigated to the IMG PDP of the regular product 1503
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a visa
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-29 - IMG Order using AMEX fully shipped no discounts
+Given I have navigated to the IMG PDP of the regular product 1503
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-30 - IMG Order using AMEX fully shipped with instant savings
 Given I have navigated to the IMG PDP of the regular product 1513
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-33 - IMG Order using AMEX fully shipped no discounts
+Given I have navigated to the IMG PDP of the regular product 1503
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a mastercard
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-34 - IMG Order using other credit card fully shipped with instant savings
+Given I have navigated to the IMG PDP of the regular product 1513
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a discover
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-41 - IMG Order using AMEX partial shipped no discounts
+Given I have navigated to the IMG PDP of the regular product 1503
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-42 - IMG Order using AMEX partial shipped instant savings
+Given I have navigated to the IMG PDP of the regular product 1513
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-45 - IMG Order using other credit card partial shipped no discounts
+Given I have navigated to the IMG PDP of the regular product 1503
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-46 - IMG Order using other credit card partial shipped with instant savings
+Given I have navigated to the IMG PDP of the regular product 1513
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2170
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-49 - All tax types (can be done on one order by testing clothing, product and software keys)
+Given I have navigated to the IMG PDP of the regular product 1513
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 11855
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product VSA56406
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 2161
+Then I add the product to the cart
+Given I have navigated to the IMG PDP of the regular product 4808
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-50 - ESC accrual by testing a lens order
+Given I have navigated to the IMG PDP of the regular product 11855
+Then I add the product to the cart
+Then I navigate to the cart
+Then I proceed to check out
+Then I complete the order using a am-ex
+
+@US_IMG_Regression
+Scenario: TC-IMG-Check-75 - IMG - Refund
+Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
