@@ -1,20 +1,20 @@
 import geb.Page;
 
 import java.awt.print.Pageable;
+import java.util.concurrent.ConcurrentHashMap.KeySet;
 
 import org.apache.xalan.xsltc.compiler.Import;
 
 import geb.*
+import geb.js.JQueryAdapter;
+import org.openqa.selenium.Keys
+import org.openqa.selenium.support.ui.*
 
 class CartSSOandCheckout extends Page{
 	static String RemoveProductXpath;
-	static String QuantityDropdownExpandXpath;
-	static String QuantityDropdownSelectXpath;
+	
 	//CheckoutDeliveryOptionSelectStrings
 	static String SelectDeliveryXpath;
-	//Checkout Payment Detail Strings
-	static String YearInputXpath; // probably standardize a date 12/18 or something
-	static String MonthInputXpath;
 	//Checkout Address Strings
 	static String TitleExpandXpath;
 	static String TitleSelectXpath;
@@ -29,13 +29,10 @@ class CartSSOandCheckout extends Page{
 	public static void setTesturl(String testurl) {
 		this.url = testurl;
 	}
-	
 	static at = {
 	}
 
 	static content = {
-		quantityDropDownexpand{$(QuantityDropdownExpandXpath)} //#QuantityProduct_0 or 1 etc
-		quantityDropDownSelect{$(QuantityDropdownSelectXpath)} //TODO Pankaj 
 		RemoveProductElement{$(RemoveProductXpath)} 
 		ProceedToCheckout{$('aside.order-summary>section.summary-section>p>a.primary_cta>span.button_label')}
 		PromoCodeButton{$('span.action-input-btn')}
@@ -56,6 +53,8 @@ class CartSSOandCheckout extends Page{
 		CardFirstNameInput{$('#first-name-new-1New')}
 		CardLastNameInput{$('#last-name-new-2New')}
 		//TODO George paypall stuff
+		
+		// address change $("[href='/nikonstorefront/checkout/steps/edit-delivery-address']").click()
 		//Address content
 		AddressSubmit{$('a.primary_cta>span.button_label')}
 		Phone{$(PhoneXpath)}
@@ -93,18 +92,20 @@ class CartSSOandCheckout extends Page{
 	public void CheckProductIsPresent(){
 		
 	}
-	/** Update quantity method
-	 * Change quantity could be a dropdown, could be a text input
-	 * thus two methods
-	 * @param QTextinputxpath
+	
+	
+	/**
 	 * @param quantity
+	 * This method sets the quntity of product to desired quantity
 	 */
-	//2
-	public void UpdateQuantityDropDown(String dropdownxpath, String selectxpath){
-		QuantityDropdownExpandXpath=dropdownxpath
-		QuantityDropdownSelectXpath=selectxpath
-		quantityDropDownexpand.click()
-		quantityDropDownSelect.click()
+	public void changeQuantityDropDown(String quantity){
+		waitFor(10000) {
+			$("#updateCartForm0").children("select.quantity-select").displayed
+		}
+		$("#updateCartForm0").children("select.quantity-select").value(quantity) //'2'
+		
+		//need to sleep until the qunatity and corresponding price gets updated
+		sleep(10000)
 		
 	}
 	/**This method will click the 'Remove product' link in the cart
@@ -138,14 +139,6 @@ class CartSSOandCheckout extends Page{
 		}
 		PromoCodeInput.value(promoCode)
 		PromoCodeButton.click()
-		
-	}
-	/**
-	 * Not sure how to check the value of an element
-	 * Can't implement yet
-	 */
-	//TODO Pankaj
-	public void CheckQuantity(){
 		
 	}
 	
@@ -246,6 +239,15 @@ class CartSSOandCheckout extends Page{
 		PwInput.value(password)
 		LoginButton.click()
 	}
+	//logging in as guest user
+	public void LogInGuestUser(String userName){
+		waitFor(10000){
+			ProceedButton.displayed
+		}
+		ProceedButton.click()
+		EmailInput.value(userName)
+		GuestSubmitButton.click()
+	}
 	
 	
 	public void CheckOutAsGuest(String emailAddress){
@@ -291,18 +293,18 @@ class CartSSOandCheckout extends Page{
 			}
 			CardVerificationInput.value(cardVerificationNumber)
 		}
-		/**This inputs a card expiration date in to a text input
-		 * @param monthInputXpath
-		 * @param yearInputXpath
+		
+		/**
+		 * This method is used to input expiration month and year
 		 * @param month
 		 * @param year
 		 */
-		//TODO
-		public void ExpirationDateInput(String monthInputXpath, String yearInputXpath, String month, String year){
-			MonthInputXpath=monthInputXpath
-			YearInputXpath=yearInputXpath
-			MonthInput.value(month)
-			YearInput.value(year)
+		public void expirationDateInput(String month, String year){
+			waitFor {
+				$("div").children("exp-date-inputs").children("card_expirationMonth").displayed
+			}
+			    $("#cc-exp-month-newNew").value(month)
+				$("#cc-exp-year-newNew").value(year)
 		}
 		/**This method selects the delivery address as the billing address
 		 * arvato.csr@outlook.com
@@ -314,9 +316,11 @@ class CartSSOandCheckout extends Page{
 		public void SubmitPaymentInfo(){
 			println 'submitting T&C'
 			waitFor(10000){
+				
 				TermsAndConditions.displayed
 			}
 			TermsAndConditions.click()
+			
 			println 'submitting payment info'
 			Submit.click()
 		}
@@ -332,10 +336,124 @@ class CartSSOandCheckout extends Page{
 				}
 				ChangeCC.click()
 				String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
-				waitFor{
+				waitFor(10000){
 					$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
 				}
 				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
 				
 				}
+			
+			/**
+			 * This method is used to add payment method for csr user/guest user
+			 * @param firstName
+			 * @param lastName
+			 * @param cardNumber
+			 * @param securityCode
+			 * @param expirationMonth
+			 * @param expirationYear
+			 */
+			public void addPaymentMethodAndCheckOut(String firstName, String lastName, String cardNumber, String securityCode, String expirationMonth, String expirationYear){
+				waitFor(10000){
+					
+					$("#first-name-new-1New").displayed
+					
+				}
+				
+				$("#first-name-new-1New").value(firstName) //'Pankaj'
+				$("#last-name-new-2New").value(lastName)//'Ghimire'
+				$("#cc-num3New").value(cardNumber)//'6111111111111111'
+				$("#cc-exp-month-newNew").value(expirationMonth)//'5'
+				$("#cc-exp-year-newNew").value(expirationYear)//'2016'
+				$("#ccv-code3New").value(securityCode)//'123'
+				
+				waitFor(10000){
+					$("section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label").displayed
+				}
+				$("section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label").click()
+				
+				println 'submitting payment info'
+				
+				$("section.card.payment-section>div.sg-form>section.place-order-cc>a#place_order_bttn").click()
+				
+			}
+			
+			/**
+			 * This method will be used by csr/guest/new user to enter shipping info
+			 * @param firstName
+			 * @param lastName
+			 * @param company
+			 * @param street1
+			 * @param city
+			 * @param state
+			 * @param zipCode
+			 * @param phoneNumber
+			 * @param emailAddress
+			 */
+			public void addNewAddress(String firstName, String lastName, String company, String street1, String city,String state, String zipCode,String phoneNumber, String emailAddress){
+				// as per correct csr flow , input field should be reset so this if condition should be removed once there is correction from Dev
+				waitFor() {
+					
+					$("div.field.fname>input#firstName").displayed
+				}
+				$("div.field.fname>input#firstName").value(firstName)//'Pankaj'
+				$("div.field.lname>input#lastName").value(lastName)//'Ghimire'
+				$("div.field.company>input#company").value(company)//'Arvato Systems'
+				$("div.field.address1>input#line1").value(street1)//'8 Foster Drive'
+				$("div.field.city>input#townCity").value(city) //'Willimantic'
+				$("div.field.state>select#regionIso").value(state)//'Connecticut'
+				$("div.field.postal>input#postcode").value(zipCode) //'06226'
+				$("div.field.contact-phone>input#phone").value(phoneNumber)//'8607263846'
+				$("div.field.contact-email>input#email").value(emailAddress)//'pankaj.ghimire@arvatosystems.com'
+				
+				$("section.card.shipping-address>p>a.primary_cta>span.button_label").click()
+			}
+			
+			/**
+			 * This method is used to select the shipping method by CSR/Guest/New user
+			 * @param shippingMethod
+			 */
+			public void selectShippingMethod(String shippingMethod){
+				
+				
+				waitFor(10000){
+					
+					$("form#selectShippingForm.sg-form>section.shipping-method-selection.action-selectors>footer>a.primary_cta>span.button_label").displayed
+				}
+				
+					if (shippingMethod.contains('Ground')){
+						// the section with class name "shipping-estimate" will be searched and returned
+						// we have 3 sections with same class name so selecting 0 for ground
+						$('section',0,class:"shipping-estimate").click() // for ground shipping
+					} else if(shippingMethod.contains('Second Day Air')){ 
+					waitFor(10000){
+						$("form#selectShippingForm>section.shipping-method-selection").displayed
+						}
+					$('section',1,class:"shipping-estimate").click()
+					} else if (shippingMethod.contains('Next Day Air')){
+					
+					waitFor(10000){
+					$("form#selectShippingForm>section.shipping-method-selection").displayed
+					}
+					$('section',2,class:"shipping-estimate").click()
+				} else {
+						//do nothing 
+				}
+				
+				$("form#selectShippingForm>section.shipping-method-selection.action-selecters>footer>a.primary_cta.next-step>span.button_label").click()
+//				}
+			}
+
+			
+			
+	/**
+	 * This method will be used to chage the default shipping method
+	 * @return
+	 * 
+	 */
+	private changeShippingMethod() {
+		waitFor(10000){
+			$('section.card.shipping-method.summary>header.hdr-section>p.hdr-link>a.text-link').displayed
+		}
+		$('section.card.shipping-method.summary>header.hdr-section>p.hdr-link>a.text-link').click()
+	}
 }
