@@ -1,4 +1,3 @@
-
 Feature: US SRO Regression Test Cases As CSR
 These test cases will be deployed against the US SRO Nikon Site
 
@@ -23,7 +22,7 @@ Given I have navigated to the SRO PDP of the regular product 5450
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Second Day Air
 Then I complete the order as csr
 
@@ -33,7 +32,7 @@ Given I have navigated to the SRO PDP of the regular product 761
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Ground
 Then I complete the order as csr
 
@@ -43,7 +42,7 @@ Given I have navigated to the SRO PDP of the regular product 16303
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Ground
 Then I complete the order as csr
 
@@ -53,7 +52,7 @@ Given I have navigated to the SRO PDP of the regular product 761
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Second Day Air
 Then I complete the order as csr
 
@@ -63,7 +62,7 @@ Given I have navigated to the SRO PDP of the regular product 16303
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Ground
 Then I complete the order as csr
 
@@ -73,7 +72,7 @@ Given I have navigated to the SRO PDP of the regular product 16303
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Ground
 Then I complete the order as csr
 
@@ -83,7 +82,7 @@ Given I have navigated to the SRO PDP of the regular product 761
 Then I add the product to the cart
 Then I navigate to the SRO cart
 Then I proceed to check out
-I add the shipping address
+Then I add the shipping address
 Then I select shipping method Ground
 Then I complete the order as csr
 
