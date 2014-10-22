@@ -7,7 +7,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -17,7 +17,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -25,7 +25,7 @@ Then I complete the order using a visa
 Scenario: TC-IMG-Check-6 - Preorder - In Stock - Release Date Reached 
 Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -33,7 +33,7 @@ Then I complete the order using a discover
 Scenario: TC-IMG-Check-8 - Backorder - In Stock
 Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -41,7 +41,7 @@ Then I complete the order using a mastercard
 Scenario: TC-IMG-Check-12  - Preorder Complete Returns
 Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -49,7 +49,7 @@ Then I complete the order using a discover
 Scenario: TC-IMG-Check-13 - Backorder Complete Returns
 Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -57,7 +57,7 @@ Then I complete the order using a mastercard
 Scenario: TC-IMG-Check-15 - Backorder Order Canceled in SAP (After Custom time frame)
 Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -65,7 +65,7 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-17  - Preorder Order Canceled in SAP (After Custom time frame)
 Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -73,7 +73,7 @@ Then I complete the order using a visa
 Scenario: TC-IMG-Check-18 - Digital Product
 Given I have navigated to the IMG PDP of the regular product VSA56406
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -83,7 +83,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product VSA56406
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -91,7 +91,7 @@ Then I complete the order using a visa
 Scenario: TC-IMG-Check-20 - Digital Product + Regular Item 
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I proceed to check out
 Then I complete the order using a visa
@@ -102,7 +102,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -112,7 +112,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -122,7 +122,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -132,7 +132,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -142,7 +142,7 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -150,7 +150,7 @@ Then I use paypal to complete the order
 Scenario: TC-IMG-Check-28 - IMG Order using PayPal fully shipped with instant savings
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I proceed to check out
 Then I use paypal to complete the order
@@ -161,7 +161,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -171,7 +171,7 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -179,9 +179,9 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-31 - IMG Order using AMEX fully shipped with other discount
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -191,9 +191,9 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -203,7 +203,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -213,7 +213,7 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -223,9 +223,9 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -235,7 +235,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -245,7 +245,7 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -255,9 +255,9 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -267,9 +267,9 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -279,7 +279,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -289,7 +289,7 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -299,9 +299,9 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -311,9 +311,9 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -323,7 +323,7 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -333,7 +333,7 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -343,9 +343,9 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -355,9 +355,9 @@ Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 13059
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -373,7 +373,7 @@ Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -381,7 +381,7 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-50 - ESC accrual by testing a lens order
 Given I have navigated to the IMG PDP of the regular product 11855
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -389,7 +389,7 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-51 - Free shipping Imaging 
 Given I have navigated to the IMG PDP of the regular product 2166 
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code freeshipping2166
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -398,7 +398,7 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-52 - Totally free of charge order IMG
 Given I have navigated to the IMG PDP of the regular product 1501 
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I enter a promo code freeorder1501
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -409,6 +409,6 @@ Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
