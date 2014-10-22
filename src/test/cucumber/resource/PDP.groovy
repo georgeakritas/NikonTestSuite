@@ -7,10 +7,6 @@ import geb.Page;
 
 
 public class PDP extends Page{
-	static String AddToCartButtonXpath;
-	static String QuantityTextInputXpath;
-	static String QuantityDropdownExpandXpath;
-	static String QuantityDropdownSelectXpath;
 	static String PriceXpath
 	static String CrossSellXpath
 	
@@ -25,60 +21,38 @@ public class PDP extends Page{
 	}
 
 	static content = {
-		addToCartButton{$(AddToCartButtonXpath)}
-		quantityTextInput{$(QuantityTextInputXpath)}
-		quantityDropDownexpand{$(QuantityDropdownExpandXpath)}
-		quantityDropDownSelect{$(QuantityDropdownSelectXpath)}
 		priceElement{$(PriceXpath)}
 		CrossSellElement{$(CrossSellXpath)}
 	}
 	
-	/**Add to cart method
-	 * note the  waitFor method, might be nice to implement elsewhere
-	 * @param cartButtonXpath
+
+	/**
+	 * This method is used to add to cart
 	 */
-	public void AddToCart(String cartButtonXpath){
-		AddToCartButtonXpath=cartButtonXpath
-		println cartButtonXpath
-		waitFor {
-			addToCartButton.displayed
-		}
-		addToCartButton.click()
-		sleep(10000)
-		} 
-	
-	
-	/** Change quantity method
-	 * Change quantity could be a dropdown, could be a text input
-	 * thus two methods
-	 * @param QTextinputxpath
-	 * @param quantity
-	 */
-	//1
-	public void ChangeQuantityTextInput(String QTextinputxpath, int quantity){
-		QuantityTextInputXpath=QTextinputxpath
-		quantityTextInput.value(quantity)
-		}
-	//2
-	public void ChangeQuantityDropDown(String dropdownxpath, String selectxpath){
-		QuantityDropdownExpandXpath=dropdownxpath
-		QuantityDropdownSelectXpath=selectxpath
-		quantityDropDownexpand.click()
-		quantityDropDownSelect.click()
+	public void addToCart(){
 		
-	}
-	/**Check price method
-	 * This method MAY NOT WORK
-	 * @param actualPriceXpath
+		waitFor {
+			$(".cta").children("span.button_label").displayed
+		}
+		$(".cta").children("span.button_label").click()
+		sleep(10000)
+		}
+	
+	
+	/**
+	 * Check price method
 	 * @param assumedPrice
 	 */
 	
-	public void CheckPrice(String actualPriceXpath, float assumedPrice){
+	 public void checkPrice(String assumedPrice){
 		
-		float actualPrice= priceElement.getValue() //not sure if works .getAttribute?
+		String actualPrice=$('div.primary-notifications>span.product-price>span.price>div.curr-price>span.price-value').text()
+		println actualPrice
+		assert actualPrice == assumedPrice
 		
-        assert actualPrice == assumedPrice
+		println 'price mathces!! :D'
 		}
+	
 	/**
 	 * This method will add a cross sell item to the cart
 	 * @param xsellxpath
