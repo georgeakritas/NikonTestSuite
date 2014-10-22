@@ -73,5 +73,17 @@ Then(~'I complete the order using a (.*)'){ String CardType ->
 	SubmitPaymentInfo()
 
 }
+Then(~ 'I enter a promo code (.*)'){ String promoCode ->
+	PromoCode(promoCode)
+	}
+	
+Then(~ 'I use paypal to complete the order'){->
+PaypalCheckout()
+}
+
+Then(~ 'I complete a free order'){->
+SubmitPaymentInfo()
+
+}
 
 
