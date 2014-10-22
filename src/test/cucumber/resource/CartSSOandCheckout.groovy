@@ -37,7 +37,7 @@ class CartSSOandCheckout extends Page{
 		SelectDelivery{$(SelectDeliveryXpath)}
 		//credit card payment Details content
 		Submit{$('section.place-order-cc>a.primary_cta>span.button_label')}
-		TermsAndConditions{$('#conditions-req-checkbox')}
+		TermsAndConditions{$('section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label')}
 		ChangeCC{$('#paymentChangeLink')}
 		AddANewPaymentMethod{$('span.payment-info')}
 		UDA{$('#option-shipping-add-new-labelNew')}
@@ -47,7 +47,7 @@ class CartSSOandCheckout extends Page{
 		CardInput{$('#cc-num3New')}
 		CardFirstNameInput{$('#first-name-new-1New')}
 		CardLastNameInput{$('#last-name-new-2New')}
-		//TODO George paypall stuff
+		
 		
 		// address change $("[href='/nikonstorefront/checkout/steps/edit-delivery-address']").click()
 		//Address content
@@ -325,24 +325,33 @@ class CartSSOandCheckout extends Page{
 			Submit.click()
 		}
 		
-		/**
-		 * visa , am-ex , discover , mastercard
-		 * @param CartTypeSelector
-		 */
-			public void SelectExistingCard(String CartTypeSelector){
-				
-//				waitFor(20000){
-//					ChangeCC.displayed
-//				}
-//				ChangeCC.click()
-				String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
-				waitFor(20000){
-					$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
-				}
-				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
-				
-				}
+
+		public void PaypalCheckout(){
+			//arvatosystems.test@gmail.com
+			//5xEroLcP21
+			waitFor(10000){
+				ChangeCC.displayed
+			}
+			ChangeCC.click()
+			waitFor(10000){
+			$('p.action-select-label>span.payment-info').displayed
+			}
+			$('p.action-select-label>span.payment-info').click()
 			
+			waitFor(10000){
+			$('#payment-method-paypal').displayed
+			}
+			$('#payment-method-paypal').click()
+			
+			waitFor(10000){
+			$('#conditions-req-checkbox').displayed
+			}
+			$('#conditions-req-checkbox').click()
+			$('section.place-order-pp>#place_order_bttn>span.button_label').click()
+			//Still need to log in to pp (email input, pw input and login button
+			//then submit the order
+			
+	}		
 			/**
 			 * This method is used to add payment method for csr user/guest user
 			 * @param firstName
@@ -367,13 +376,13 @@ class CartSSOandCheckout extends Page{
 				$("#ccv-code3New").value(securityCode)//'123'
 				
 				waitFor(10000){
-					$("section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label").displayed
+					TermsAndConditions.displayed
 				}
-				$("section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label").click()
+				TermsAndConditions.click()
 				
 				println 'submitting payment info'
 				
-				$("section.card.payment-section>div.sg-form>section.place-order-cc>a#place_order_bttn").click()
+				Submit.click()
 				
 			}
 			
@@ -456,4 +465,24 @@ class CartSSOandCheckout extends Page{
 		}
 		$('section.card.shipping-method.summary>header.hdr-section>p.hdr-link>a.text-link').click()
 	}
+	
+	
+	
+	/**
+	 * visa , am-ex , discover , mastercard
+	 * @param CartTypeSelector
+	 */
+		public void SelectExistingCard(String CartTypeSelector){
+			
+			waitFor(10000){
+				ChangeCC.displayed
+			}
+			ChangeCC.click()
+			String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
+			waitFor(10000){
+				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
+			}
+			$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
+			
+			}
 }
