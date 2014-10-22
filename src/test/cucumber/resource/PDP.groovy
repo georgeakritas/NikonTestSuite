@@ -31,7 +31,7 @@ public class PDP extends Page{
 	 */
 	public void addToCart(){
 		
-		waitFor {
+		waitFor(10000) {
 			$(".cta").children("span.button_label").displayed
 		}
 		$(".cta").children("span.button_label").click()

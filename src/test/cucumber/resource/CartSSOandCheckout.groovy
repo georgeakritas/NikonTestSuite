@@ -1,13 +1,8 @@
 import geb.Page;
 
-import java.awt.print.Pageable;
-import java.util.concurrent.ConcurrentHashMap.KeySet;
-
 import org.apache.xalan.xsltc.compiler.Import;
 
 import geb.*
-import geb.js.JQueryAdapter;
-import org.openqa.selenium.Keys
 import org.openqa.selenium.support.ui.*
 
 class CartSSOandCheckout extends Page{
@@ -98,7 +93,7 @@ class CartSSOandCheckout extends Page{
 	 * @param quantity
 	 * This method sets the quntity of product to desired quantity
 	 */
-	public void changeQuantityDropDown(String quantity){
+	public void changeQuantityDropDown(int quantity){
 		waitFor(10000) {
 			$("#updateCartForm0").children("select.quantity-select").displayed
 		}
@@ -320,7 +315,12 @@ class CartSSOandCheckout extends Page{
 				TermsAndConditions.displayed
 			}
 			TermsAndConditions.click()
-			
+			waitFor(20000){
+				
+				$("section.place-order-cc>a.primary_cta>span.button_label").displayed
+				
+				
+			}
 			println 'submitting payment info'
 			Submit.click()
 		}
@@ -331,12 +331,12 @@ class CartSSOandCheckout extends Page{
 		 */
 			public void SelectExistingCard(String CartTypeSelector){
 				
-				waitFor(10000){
-					ChangeCC.displayed
-				}
-				ChangeCC.click()
+//				waitFor(20000){
+//					ChangeCC.displayed
+//				}
+//				ChangeCC.click()
 				String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
-				waitFor(10000){
+				waitFor(20000){
 					$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
 				}
 				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')

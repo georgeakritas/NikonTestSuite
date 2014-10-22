@@ -35,16 +35,24 @@ Then(~'I add the product to the cart'){->
 }
 
 
-Then(~'I navigate to the cart'){ ->
+Then(~'I navigate to the (.*) cart'){String productType ->
 	def cartURLString = new String()
+	if(productType.equals("IMG")){
 	cartURLString='https://imageshop.nikontest.com/nikonstorefront/cart#'
+	} else if(productType.equals("SRO")) {
+	cartURLString='https://sroshop.nikontest.com/nikonstorefront/cart#'
+	} else{
+	
+	 // check back 
+	}
+	
 	CartSSOandCheckout.setTesturl(cartURLString)
  to CartSSOandCheckout
 }
 
-Then(~'I select the quantity from the dropdown'){ ->
+Then(~'I select the (.*) from the quantity dropdown'){int quantity ->
 	
-	changeQuantityDropDown()
+	changeQuantityDropDown(quantity)
 	
 }
 
@@ -59,19 +67,28 @@ Then(~'I log in to SSO as a regular registered user'){ ->
 //	LogInRegisteredUser('arvato.csr@outlook.com', 'Wordbond1')
 	}
 
-Then(~'I change the shipping address'){ ->
+Then(~'I add the shipping address'){ ->
 	
-	addNewAddress()
-//	selectShippingMethod('Next Day Air')
+	addNewAddress('Pankaj','Ghimire','Arvato Systems','8 Foster Drive','Willimantic','Connecticut','06226','8607263846','pankaj.ghimire@arvatosystems.com')
+
 }
+
+Then(~'I add the select shipping method (.*)'){String shippingMethod ->
+		selectShippingMethod(shippingMethod) //'Next Day Air'
+}
+
 
 Then(~'I complete the order using a (.*)'){ String CardType ->
 
 	SelectExistingCard(CardType)
-//	addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015') //if csr this should be true
 	//a#paymentChangeLink
 	SubmitPaymentInfo()
 
 }
 
+Then(~'I complete the order as csr'){  ->
+	
+		addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015')
+	
+	}
 
