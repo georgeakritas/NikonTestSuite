@@ -104,3 +104,10 @@ Then(~'I complete the order as csr'){  ->
 	
 	}
 
+Given(~'I have navigated to the Brazil IMG PDP of the product (.*)') { String SKU ->
+	//Given I have navigated to the Brazil IMG PDP of the product
+	urlstring='http://stg-pt-br-img.nikontest.com/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
+	PDP.setTesturl(urlstring)
+	 to PDP
+}
+
