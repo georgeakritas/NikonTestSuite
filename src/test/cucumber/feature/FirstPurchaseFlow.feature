@@ -10,13 +10,9 @@ Then I navigate to the IMG cart
 Then I select the 2 from the quantity dropdown
 Then I proceed to check out
 Then I log in to SSO as a regular registered user
-<<<<<<< HEAD
-Then I complete the order using a am-ex
-=======
 Then I complete the order using a visa
 
 Scenario: Log out
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I log out
->>>>>>> d30a116c3385614ef968af01af760b3a84605b11
  
