@@ -7,7 +7,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -17,7 +17,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -25,7 +25,7 @@ Then I complete the order using a visa
 Scenario: TC-IMG-Check-8 - Backorder - In Stock
 Given I have navigated to the Brazil IMG PDP of the product 2137
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -33,7 +33,7 @@ Then I complete the order using a mastercard
 Scenario: TC-IMG-Check-13 - Backorder Complete Returns
 Given I have navigated to the Brazil IMG PDP of the product 2137
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -41,7 +41,7 @@ Then I complete the order using a mastercard
 Scenario: TC-IMG-Check-15 - Backorder Order Canceled in SAP (After Custom time frame)
 Given I have navigated to the Brazil IMG PDP of the product 2137
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -51,7 +51,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -61,7 +61,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -71,7 +71,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -81,7 +81,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -91,7 +91,7 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -99,7 +99,7 @@ Then I complete the order using a mastercard
 Scenario: TC-IMG-Check-28 - IMG Order using mastercard fully shipped with other discount
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I proceed to check out
 Then I complete the order using a mastercard
@@ -110,7 +110,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -120,7 +120,7 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -128,9 +128,9 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-31 - IMG Order using AMEX fully shipped with other discount
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -140,9 +140,9 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -152,7 +152,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -162,7 +162,7 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -172,9 +172,9 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -184,7 +184,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -194,7 +194,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -204,9 +204,9 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -216,9 +216,9 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -228,7 +228,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -238,7 +238,7 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -248,9 +248,9 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -260,9 +260,9 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -272,7 +272,7 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -282,7 +282,7 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -292,9 +292,9 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -304,9 +304,9 @@ Given I have navigated to the Brazil IMG PDP of the product 2213
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 1935
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -316,6 +316,6 @@ Given I have navigated to the Brazil IMG PDP of the product 1513
 Then I add the product to the cart
 Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
-Then I navigate to the IMG cart
+Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa

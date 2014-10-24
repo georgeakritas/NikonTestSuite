@@ -11,4 +11,8 @@ Then I select the 2 from the quantity dropdown
 Then I proceed to check out
 Then I log in to SSO as a regular registered user
 Then I complete the order using a visa
+
+Scenario: Log out
+Given I have navigated to the IMG PDP of the regular product 1513
+Then I log out
  

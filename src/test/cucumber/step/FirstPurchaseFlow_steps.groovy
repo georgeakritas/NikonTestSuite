@@ -44,7 +44,12 @@ Then(~'I navigate to the (.*) cart'){String productType ->
 	} else if(productType.equals("PARTS")) {
 	
 		cartURLString='https://partsshop.nikontest.com/nikonstorefront/cart#'
-	} else {
+	} 
+	else if(productType.equals("BR")) {
+		
+			cartURLString='https://imageshopbr.nikontest.com/nikonstorefront/cart#'
+		}
+	else {
 		// check back the steps and send correct argument (IMG,SRO or PARTS)
 	}
 	
@@ -113,3 +118,6 @@ Given(~'I have navigated to the Brazil IMG PDP of the product (.*)') { String SK
 	 to PDP
 }
 
+Then(~'I log out'){
+	logOut()
+}

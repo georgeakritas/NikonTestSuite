@@ -466,7 +466,14 @@ class CartSSOandCheckout extends Page{
 		$('section.card.shipping-method.summary>header.hdr-section>p.hdr-link>a.text-link').click()
 	}
 	
-	
+	public void logOut(){
+		waitFor{
+			$('#MyNikon').find('li.action>a.tool-btn').displayed
+		}
+		$('#MyNikon').find('li.action>a.tool-btn').click()
+		$('#MyNikon>ul.sso-tool.actions.active.user-known>li.action>ul.tray>li.row-container.known-user>ul>li.row>a.text-link.evt-sso-logout').click()
+		
+	}
 	
 	/**
 	 * visa , am-ex , discover , mastercard
