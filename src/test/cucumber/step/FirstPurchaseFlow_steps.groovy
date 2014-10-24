@@ -41,9 +41,11 @@ Then(~'I navigate to the (.*) cart'){String productType ->
 	cartURLString='https://imageshop.nikontest.com/nikonstorefront/cart#'
 	} else if(productType.equals("SRO")) {
 	cartURLString='https://sroshop.nikontest.com/nikonstorefront/cart#'
-	} else{
+	} else if(productType.equals("PARTS")) {
 	
-	 // check back 
+		cartURLString='https://partsshop.nikontest.com/nikonstorefront/cart#'
+	} else {
+		// check back the steps and send correct argument (IMG,SRO or PARTS)
 	}
 	
 	CartSSOandCheckout.setTesturl(cartURLString)
