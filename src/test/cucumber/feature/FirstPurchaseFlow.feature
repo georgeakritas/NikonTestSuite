@@ -10,5 +10,5 @@ Then I navigate to the IMG cart
 Then I select the 2 from the quantity dropdown
 Then I proceed to check out
 Then I log in to SSO as a regular registered user
-Then I complete the order using a visa
+Then I complete the order using a am-ex
  

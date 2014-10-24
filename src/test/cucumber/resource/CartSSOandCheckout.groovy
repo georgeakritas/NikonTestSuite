@@ -69,6 +69,15 @@ class CartSSOandCheckout extends Page{
 		ProceedButton{$('#create-account-guest')}//radio button to bring up guest checkout
 		EmailInput{$('section.new-cust-form.account-guest-form.active').find('input.email')}
 		GuestSubmitButton{$('p.cta.primary_cta.guest-login-cta')}
+		
+		//shippingmethod change link
+		
+		shippingOptionChangeLink{shippingOptionChangeLink}
+		
+		//shipping method submit button
+		
+		shippingMethodSubmitButton{shippingMethodSubmitButton}
+		
 		}
 	//Cart methods
 	/**
@@ -94,13 +103,15 @@ class CartSSOandCheckout extends Page{
 	 * This method sets the quntity of product to desired quantity
 	 */
 	public void changeQuantityDropDown(int quantity){
+		def cartForm = "#updateCartForm0"
+		def quantitySelect = "select.quantity-select"
 		waitFor(10000) {
-			$("#updateCartForm0").children("select.quantity-select").displayed
+			$(cartForm).children(quantitySelect).displayed
 		}
-		$("#updateCartForm0").children("select.quantity-select").value(quantity) //'2'
+		$(cartForm).children(quantitySelect).value(quantity) //'2'
 		
 		//need to sleep until the qunatity and corresponding price gets updated
-		sleep(10000)
+		sleep(5000)
 		
 	}
 	/**This method will click the 'Remove product' link in the cart
@@ -399,12 +410,13 @@ class CartSSOandCheckout extends Page{
 			 * @param emailAddress
 			 */
 			public void addNewAddress(String firstName, String lastName, String company, String street1, String city,String state, String zipCode,String phoneNumber, String emailAddress){
-				// as per correct csr flow , input field should be reset so this if condition should be removed once there is correction from Dev
-				waitFor() {
+				// as per correct csr flow , input field should be reset once successful checkout is done
+				def input_firstName = "div.field.fname>input#firstName"
+				waitFor(10000) {
 					
-					$("div.field.fname>input#firstName").displayed
+					$(input_firstName).displayed
 				}
-				$("div.field.fname>input#firstName").value(firstName)//'Pankaj'
+				$(input_firstName).value(firstName)//'Pankaj'
 				$("div.field.lname>input#lastName").value(lastName)//'Ghimire'
 				$("div.field.company>input#company").value(company)//'Arvato Systems'
 				$("div.field.address1>input#line1").value(street1)//'8 Foster Drive'
@@ -423,47 +435,41 @@ class CartSSOandCheckout extends Page{
 			 */
 			public void selectShippingMethod(String shippingMethod){
 				
-				
 				waitFor(10000){
 					
-					$("form#selectShippingForm.sg-form>section.shipping-method-selection.action-selectors>footer>a.primary_cta>span.button_label").displayed
+					shippingMethodSubmitButton.displayed
 				}
-				
+					def shippingOptionLabel = 'label.action-select-label'
 					if (shippingMethod.contains('Ground')){
 						// the section with class name "shipping-estimate" will be searched and returned
-						// we have 3 sections with same class name so selecting 0 for ground
-						$('section',0,class:"shipping-estimate").click() // for ground shipping
+						// we have 3 sections with same class name so selecting 0 for ground and have to find the corresponding label to click 
+						$('section',0,class:"shipping-estimate").find(shippingOptionLabel).click() // for ground shipping
+						
 					} else if(shippingMethod.contains('Second Day Air')){ 
-					waitFor(10000){
-						$("form#selectShippingForm>section.shipping-method-selection").displayed
-						}
-					$('section',1,class:"shipping-estimate").click()
+					$('section',1,class:"shipping-estimate").find(shippingOptionLabel).click()
 					} else if (shippingMethod.contains('Next Day Air')){
 					
-					waitFor(10000){
-					$("form#selectShippingForm>section.shipping-method-selection").displayed
-					}
-					$('section',2,class:"shipping-estimate").click()
+					$('section',2,class:"shipping-estimate").find(shippingOptionLabel).click()
 				} else {
 						//do nothing 
 				}
 				
-				$("form#selectShippingForm>section.shipping-method-selection.action-selecters>footer>a.primary_cta.next-step>span.button_label").click()
+				shippingMethodSubmitButton.click()
 //				}
 			}
 
 			
 			
 	/**
-	 * This method will be used to chage the default shipping method
+	 * This method will be used to change the default shipping method
 	 * @return
 	 * 
 	 */
-	private changeShippingMethod() {
+	private void changeShippingMethod() {
 		waitFor(10000){
-			$('section.card.shipping-method.summary>header.hdr-section>p.hdr-link>a.text-link').displayed
+			shippingOptionChangeLink.displayed
 		}
-		$('section.card.shipping-method.summary>header.hdr-section>p.hdr-link>a.text-link').click()
+		shippingOptionChangeLink.click()
 	}
 	
 	

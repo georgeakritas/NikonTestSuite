@@ -31,10 +31,12 @@ public class PDP extends Page{
 	 */
 	public void addToCart(){
 		
+		def cartClass = ".cta"
+		def cartButtonLabel = "span.button_label"
 		waitFor(10000) {
-			$(".cta").children("span.button_label").displayed
+			$(cartClass).children(cartButtonLabel).displayed
 		}
-		$(".cta").children("span.button_label").click()
+		$(cartClass).children(cartButtonLabel).click()
 		sleep(10000)
 		}
 	
