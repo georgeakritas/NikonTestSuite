@@ -69,9 +69,10 @@ Then(~'I proceed to check out'){ ->
 
 
 Then(~'I log in to SSO as a regular registered user'){ ->
-	//LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123', 'form.existing-account-login>fieldset>div.field>input.email', 'form.existing-account-login>fieldset>div.field>input.password', 'form.existing-account-login>div.buttons>button.primary_cta')
 	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123')
 //	LogInRegisteredUser('arvato.csr@outlook.com', 'Wordbond1')
+	//email george.m.akritas@gmail
+	//pw : arvatoQA123
 	}
 
 Then(~'I add the shipping address'){ ->
@@ -118,6 +119,6 @@ Given(~'I have navigated to the Brazil IMG PDP of the product (.*)') { String SK
 	 to PDP
 }
 
-Then(~'I log out'){
+Then(~'I log out'){->
 	logOut()
 }
