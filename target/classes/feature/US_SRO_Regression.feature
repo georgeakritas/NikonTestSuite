@@ -8,8 +8,9 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 6118
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
+Then I log in to SSO as a regular registered user
 Then I complete the order using a visa
 
 @US_SRO_Regression
@@ -18,7 +19,7 @@ Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 5450
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -26,7 +27,7 @@ Then I complete the order using a visa
 Scenario: TC-SRO-Check-6 - Preorder - In Stock - Release Date Reached 
 Given I have navigated to the SRO PDP of the regular product 761
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -34,7 +35,7 @@ Then I complete the order using a discover
 Scenario: TC-SRO-Check-8 - Backorder - In Stock
 Given I have navigated to the SRO PDP of the regular product 16303
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -42,7 +43,7 @@ Then I complete the order using a mastercard
 Scenario: TC-SRO-Check-12  - Preorder Complete Returns
 Given I have navigated to the SRO PDP of the regular product 761
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -50,7 +51,7 @@ Then I complete the order using a discover
 Scenario: TC-SRO-Check-13 - Backorder Complete Returns
 Given I have navigated to the SRO PDP of the regular product 16303
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -58,7 +59,7 @@ Then I complete the order using a mastercard
 Scenario: TC-SRO-Check-15 - Backorder Order Canceled in SAP (After Custom time frame)
 Given I have navigated to the SRO PDP of the regular product 16303
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -66,7 +67,7 @@ Then I complete the order using a am-ex
 Scenario: TC-SRO-Check-17  - Preorder Order Canceled in SAP (After Custom time frame)
 Given I have navigated to the SRO PDP of the regular product 761
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -76,7 +77,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -86,7 +87,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -96,7 +97,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -106,7 +107,7 @@ Given I have navigated to the SRO PDP of the regular product 7549
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -116,7 +117,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -127,7 +128,7 @@ Given I have navigated to the SRO PDP of the regular product 7549
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -137,7 +138,7 @@ Given I have navigated to the SRO PDP of the regular product 6177
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -145,7 +146,7 @@ Then I complete the order using a am-ex
 Scenario: TC-SRO-Check-30 - SRO Order using AMEX fully shipped with other discount
 Given I have navigated to the SRO PDP of the regular product 6118
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I enter a promo code 10percentoff6118
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -157,7 +158,7 @@ Given I have navigated to the SRO PDP of the regular product 7549
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a mastercard
 
@@ -167,7 +168,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -177,7 +178,7 @@ Given I have navigated to the SRO PDP of the regular product 7549
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -187,7 +188,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a am-ex
 
@@ -197,7 +198,7 @@ Given I have navigated to the SRO PDP of the regular product 7549
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -207,7 +208,7 @@ Given I have navigated to the SRO PDP of the regular product 6117
 Then I add the product to the cart
 Given I have navigated to the SRO PDP of the regular product 740
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I proceed to check out
 Then I complete the order using a discover
 
@@ -215,7 +216,7 @@ Then I complete the order using a discover
 Scenario: TC-SRO-Check-48 - SRO Order using AMEX with Free Shipping
 Given I have navigated to the SRO PDP of the regular product 7549
 Then I add the product to the cart
-Then I navigate to the cart
+Then I navigate to the SRO cart
 Then I enter a promo code freeshipping7549
 Then I proceed to check out
 Then I complete the order using a am-ex

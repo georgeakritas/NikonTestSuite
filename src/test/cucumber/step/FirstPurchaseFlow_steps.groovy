@@ -15,34 +15,44 @@ def urlstring = new String()
 
 
 Given(~'I have navigated to the IMG PDP of the regular product (.*)') { String SKU ->
-	
+
 	urlstring='http://stg-en-us-img.nikontest.com/en/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
 	PDP.setTesturl(urlstring)
-	 to PDP
+	to PDP
 }
 
 Given(~'I have navigated to the SRO PDP of the regular product (.*)') { String SKU ->
-	
+
 	urlstring='http://stg-en-us-sro.nikontest.com/en/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
 	PDP.setTesturl(urlstring)
-	 to PDP
+	to PDP
+}
+
+Given(~'I have navigated to the PARTS PDP of the parts product (.*)') { String SKU ->
+
+	urlstring='http://stg-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'
+	PDP.setTesturl(urlstring)
+	to PDP
+}
+
+Then(~'I check the product price (.*)'){String price->
+	//lets check the price first
+	checkPrice(price) // you can also check price using this method
+
 }
 Then(~'I add the product to the cart'){->
-	//lets check the price first
-//	checkPrice('$1,099.95') // you can also check price using this method
 	addToCart()
-	
 }
 
 
 Then(~'I navigate to the (.*) cart'){String productType ->
 	def cartURLString = new String()
 	if(productType.equals("IMG")){
-	cartURLString='https://imageshop.nikontest.com/nikonstorefront/cart#'
+		cartURLString='https://imageshop.nikontest.com/nikonstorefront/cart#'
 	} else if(productType.equals("SRO")) {
-	cartURLString='https://sroshop.nikontest.com/nikonstorefront/cart#'
+		cartURLString='https://sroshop.nikontest.com/nikonstorefront/cart#'
 	} else if(productType.equals("PARTS")) {
-	
+
 		cartURLString='https://partsshop.nikontest.com/nikonstorefront/cart#'
 	} 
 	else if(productType.equals("BR")) {
@@ -52,37 +62,39 @@ Then(~'I navigate to the (.*) cart'){String productType ->
 	else {
 		// check back the steps and send correct argument (IMG,SRO or PARTS)
 	}
-	
+
 	CartSSOandCheckout.setTesturl(cartURLString)
- to CartSSOandCheckout
+	to CartSSOandCheckout
 }
 
 Then(~'I select the (.*) from the quantity dropdown'){int quantity ->
-	
+
 	changeQuantityDropDown(quantity)
-	
+
 }
 
-Then(~'I proceed to check out'){ ->                     
-	ProcedeToCheckout() 
+Then(~'I proceed to check out'){ ->
+	ProcedeToCheckout()
 }
 
 
 Then(~'I log in to SSO as a regular registered user'){ ->
 	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123')
-//	LogInRegisteredUser('arvato.csr@outlook.com', 'Wordbond1')
-	//email george.m.akritas@gmail
-	//pw : arvatoQA123
-	}
+}
+
+Then(~'I log in to SSO as a csr user'){ ->
+	LogInRegisteredUser('arvato.csr@outlook.com', 'Wordbond1') //function name looks confusing but it can accept  both regular/csr user credentials
+}
 
 Then(~'I add the shipping address'){ ->
-	
-	addNewAddress('Pankaj','Ghimire','Arvato Systems','8 Foster Drive','Willimantic','Connecticut','06226','8607263846','pankaj.ghimire@arvatosystems.com')
+
+	addNewAddress('Rajesh','Hamal','Nepal Film Industry','214H Foster Drive','Willimantic','Connecticut','06226','3128413991','pankaj.ghimire@arvatosystems.com')
 
 }
 
 Then(~'I add the select shipping method (.*)'){String shippingMethod ->
-		selectShippingMethod(shippingMethod) //'Next Day Air'
+	selectShippingMethod(shippingMethod) //'Next Day Air'
+
 }
 
 
@@ -95,28 +107,28 @@ Then(~'I complete the order using a (.*)'){ String CardType ->
 }
 Then(~ 'I enter a promo code (.*)'){ String promoCode ->
 	PromoCode(promoCode)
-	}
-	
+}
+
 Then(~ 'I use paypal to complete the order'){->
-PaypalCheckout()
+	PaypalCheckout()
 }
 
 Then(~ 'I complete a free order'){->
-SubmitPaymentInfo()
+	SubmitPaymentInfo()
 
 }
 
 Then(~'I complete the order as csr'){  ->
-	
-		addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015')
-	
-	}
+
+	addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015')
+
+}
 
 Given(~'I have navigated to the Brazil IMG PDP of the product (.*)') { String SKU ->
 	//Given I have navigated to the Brazil IMG PDP of the product
 	urlstring='http://stg-pt-br-img.nikontest.com/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
 	PDP.setTesturl(urlstring)
-	 to PDP
+	to PDP
 }
 
 Then(~'I log out'){->
