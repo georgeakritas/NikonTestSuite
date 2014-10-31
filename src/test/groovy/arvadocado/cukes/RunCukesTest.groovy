@@ -11,7 +11,7 @@ import org.junit.runner.RunWith
 	strict=true,
 	features=["src/test/cucumber/feature"],
 	glue=["src/test/cucumber/step", "src/test/cucumber/resource", "src/test/cucumber/support"]
-	,tags=["~@manual", "~@review"]
+	,tags=["~@manual", "~@review", "~@ignore"]
 	)
 	public class RunCukesTest {
 		
