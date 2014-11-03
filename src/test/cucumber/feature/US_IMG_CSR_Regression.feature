@@ -1,4 +1,4 @@
-Feature: US IMG CSR Regression Test Cases 
+Feature: US IMG Regression Test Cases 
 These test cases will be deployed against the US IMG Nikon Site
 
 @US_IMG_Regression
@@ -9,6 +9,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -19,6 +21,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -27,6 +31,8 @@ Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -35,6 +41,8 @@ Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -43,6 +51,8 @@ Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -51,6 +61,8 @@ Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -59,6 +71,8 @@ Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -67,6 +81,8 @@ Given I have navigated to the IMG PDP of the regular product 2161
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -75,6 +91,8 @@ Given I have navigated to the IMG PDP of the regular product VSA56406
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -85,6 +103,8 @@ Given I have navigated to the IMG PDP of the regular product VSA56406
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -94,6 +114,8 @@ Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -104,6 +126,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -114,6 +138,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -124,6 +150,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -134,7 +162,9 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-27 - IMG Order using PayPal fully shipped with instant savings
@@ -144,7 +174,9 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-28 - IMG Order using PayPal fully shipped with instant savings
@@ -153,7 +185,9 @@ Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-29 - IMG Order using AMEX fully shipped no discounts
@@ -163,6 +197,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -173,6 +209,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -183,6 +221,8 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -195,6 +235,8 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -205,6 +247,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -215,6 +259,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -227,6 +273,8 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -237,7 +285,9 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-38 - IMG Order using PayPal partial shipped no discounts
@@ -247,7 +297,9 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-39 - IMG Order using PayPal partial shipped with other discount
@@ -259,7 +311,9 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-40 - IMG order using PayPal with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
@@ -271,7 +325,9 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-41 - IMG Order using AMEX partial shipped no discounts
@@ -281,6 +337,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -291,6 +349,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -303,7 +363,9 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
-Then I use paypal to complete the order
+Then I add the shipping address
+Then I select shipping method Second Day Air
+Then I complete the order as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-44 - IMG order using AMEX with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
@@ -315,6 +377,8 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -325,6 +389,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -335,6 +401,8 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -347,6 +415,8 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -359,6 +429,8 @@ Then I navigate to the IMG cart
 Then I enter a promo code 10percentoff13059
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -375,6 +447,8 @@ Given I have navigated to the IMG PDP of the regular product 4808
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -383,6 +457,8 @@ Given I have navigated to the IMG PDP of the regular product 11855
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -392,6 +468,8 @@ Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I enter a promo code freeshipping2166
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -401,6 +479,8 @@ Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I enter a promo code freeorder1501
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
 
 @US_IMG_Regression
@@ -411,4 +491,6 @@ Given I have navigated to the IMG PDP of the regular product 2170
 Then I add the product to the cart
 Then I navigate to the IMG cart
 Then I proceed to check out
+Then I add the shipping address
+Then I select shipping method Second Day Air
 Then I complete the order as csr
