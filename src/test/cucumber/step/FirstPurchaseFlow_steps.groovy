@@ -81,6 +81,9 @@ Then(~'I proceed to check out'){ ->
 Then(~'I log in to SSO as a regular registered user'){ ->
 	LogInRegisteredUser('George.Akritas@arvatosystems.com', 'arvatoQA123')
 }
+Then(~'I log in to SSO as a Brazil registered user'){ ->
+	LogInRegisteredUser('george.m.akritas@gmail.com', 'arvatoQA123')
+}
 
 Then(~'I log in to SSO as a csr user'){ ->
 	LogInRegisteredUser('arvato.csr@outlook.com', 'Wordbond1') //function name looks confusing but it can accept  both regular/csr user credentials
@@ -90,6 +93,11 @@ Then(~'I add the shipping address'){ ->
 
 	addNewAddress('Rajesh','Hamal','Nepal Film Industry','214H Foster Drive','Willimantic','Connecticut','06226','3128413991','pankaj.ghimire@arvatosystems.com')
 
+}
+
+Then(~'I add the Brazillian shipping address'){ ->
+	addNewAddressBrazil('Jose', 'Barco', 'BARAO DE LUCA', '2', 'FRANCA','São Paulo', '14400-902','(55) 55555-5555', 'arvatoqanyc@gmail.com', '838.041.005-03', 'ESTACAO' )
+	
 }
 
 Then(~'I add the select shipping method (.*)'){String shippingMethod ->

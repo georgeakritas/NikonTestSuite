@@ -428,6 +428,40 @@ class CartSSOandCheckout extends Page{
 				
 				$("section.card.shipping-address>p>a.primary_cta>span.button_label").click()
 			}
+			/**
+			 * 
+			 * @param firstName
+			 * @param lastName
+			 * @param company
+			 * @param street1
+			 * @param city
+			 * @param state
+			 * @param zipCode
+			 * @param phoneNumber
+			 * @param emailAddress
+			 */
+			public void addNewAddressBrazil(String firstName, String lastName, String street1, String numero, String city,String state, String zipCode,String phoneNumber, String emailAddress, String taxID, String barrio ){
+				// as per correct csr flow , input field should be reset once successful checkout is done
+				def input_firstName = "div.field.fname>input#firstName"
+				waitFor(10000) {
+					
+					$(input_firstName).displayed
+				}
+				$(input_firstName).value(firstName)
+				$("div.field.lname>input#lastName").value(lastName)
+				$("div.field.address1>input#line1").value(street1)
+				$('#streetNumber').value(numero)
+				$("div.field.city>input#townCity").value(city)
+				$("div.field.state>select#regionIso").value(state)
+				$("div.field.postal>input#postcode").value(zipCode) 
+				$("div.field.contact-phone>input#phone").value(phoneNumber)
+				$("div.field.contact-email>input#email").value(emailAddress)
+				$('#taxId').value(taxId)
+				$('#district').value(barrio)
+				
+				
+				$("section.card.shipping-address>p>a.primary_cta>span.button_label").click()
+			}
 			
 			/**
 			 * This method is used to select the shipping method by CSR/Guest/New user

@@ -9,6 +9,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -19,6 +21,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -27,6 +31,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2137
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -35,6 +41,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2137
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -43,6 +51,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2137
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -53,6 +63,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -63,6 +75,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -73,6 +87,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -83,6 +99,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -93,6 +111,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -102,6 +122,8 @@ Then I add the product to the cart
 Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -112,6 +134,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -122,6 +146,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -132,6 +158,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -144,6 +172,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -154,8 +184,9 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
-
 @ignore
 Scenario: TC-IMG-CSR-Check-34 - IMG Order using other credit card fully shipped with instant savings
 Given I have navigated to the Brazil IMG PDP of the product 2213
@@ -164,6 +195,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -176,6 +209,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -186,6 +221,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -196,6 +233,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -208,6 +247,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -220,6 +261,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -230,6 +273,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -240,6 +285,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -252,6 +299,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -264,6 +313,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -274,6 +325,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -284,6 +337,8 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -296,6 +351,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -308,6 +365,8 @@ Then I navigate to the BR cart
 Then I enter a promo code 10percentoff1935
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
 
 @ignore
@@ -318,4 +377,6 @@ Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
+Then I add the Brazillian shipping address
+Then I select shipping method Ground
 Then I complete the order as csr
