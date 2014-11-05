@@ -1,3 +1,4 @@
+@ignore
 Feature: US IMG Regression Test Cases 
 These test cases will be deployed against the US IMG Nikon Site
 

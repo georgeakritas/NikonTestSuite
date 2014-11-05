@@ -96,7 +96,7 @@ Then(~'I add the shipping address'){ ->
 }
 
 Then(~'I add the Brazillian shipping address'){ ->
-	addNewAddressBrazil('Jose', 'Barco', 'BARAO DE LUCA', '2', 'FRANCA','São Paulo', '14400-902','(55) 55555-5555', 'arvatoqanyc@gmail.com', '838.041.005-03', 'ESTACAO' )
+	addNewAddressBrazil('Jose', 'Barco', 'Av. Henrique Valadares', '107', 'Rio de Janeiro','Rio de Janeiro', '20231-030','(55) 55555-5555', 'arvatoqanyc@gmail.com', '838.041.005-03', 'Centro' )
 	
 }
 

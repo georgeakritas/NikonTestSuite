@@ -105,7 +105,7 @@ class CartSSOandCheckout extends Page{
 	public void changeQuantityDropDown(int quantity){
 		def cartForm = "#updateCartForm0"
 		def quantitySelect = "select.quantity-select"
-		waitFor(10000) {
+		waitFor(10, 0.25) {
 			$(cartForm).children(quantitySelect).displayed
 		}
 		$(cartForm).children(quantitySelect).value(quantity) //'2'
@@ -120,7 +120,7 @@ class CartSSOandCheckout extends Page{
 	 */
 	public void RemoveProduct(String removeProductNumber){
 		RemoveProductXpath='#RemoveProduct_'+ removeProductNumber 
-		waitFor(10000){
+		waitFor(10, 0.25){
 			RemoveProductElement.displayed
 		}
 		RemoveProductElement.click()
@@ -130,7 +130,7 @@ class CartSSOandCheckout extends Page{
 	 * @param ProceedToCheckoutXpath
 	 */
 	public void ProcedeToCheckout(){
-		waitFor(10000){
+		waitFor(10, 0.25){
 			ProceedToCheckout.displayed
 		}
 		ProceedToCheckout.click()
@@ -140,7 +140,7 @@ class CartSSOandCheckout extends Page{
 	 * @param promoCode
 	 */
 	public void PromoCode(String promoCode){
-		waitFor(10000){
+		waitFor(10, 0.25){
 		PromoCodeInput.displayed
 		}
 		PromoCodeInput.value(promoCode)
@@ -155,12 +155,12 @@ class CartSSOandCheckout extends Page{
 	 * @param deliveryMethod
 	 */
 	public void SelectDeliveryOption(String deliveryMethod){
-		waitFor(10000){	$('section.card.shipping-method').find('a.text-link').displayed
+		waitFor(10, 0.25){	$('section.card.shipping-method').find('a.text-link').displayed
 		
 		}
 		$('section.card.shipping-method').find('a.text-link').click()
 		SelectDeliveryXpath = 'shippingMethod'+deliveryMethod
-		waitFor(10000){
+		waitFor(10, 0.25){
 			SelectDelivery.displayed
 		}
 		SelectDelivery.click()
@@ -238,7 +238,7 @@ class CartSSOandCheckout extends Page{
 	//Checkout SSO methods
 	
 	public void LogInRegisteredUser(String userName, String password){
-		waitFor(10000){
+		waitFor(10, 0.25){
 			UsernameInput.displayed
 		}
 		UsernameInput.value(userName)
@@ -247,7 +247,7 @@ class CartSSOandCheckout extends Page{
 	}
 	//logging in as guest user
 	public void LogInGuestUser(String userName){
-		waitFor(10000){
+		waitFor(10, 0.25){
 			ProceedButton.displayed
 		}
 		ProceedButton.click()
@@ -274,7 +274,7 @@ class CartSSOandCheckout extends Page{
 		 * @param lastName
 		 */
 		public void NameOnCardInput(String firstName, String lastName){
-			waitFor(10000){
+			waitFor(10, 0.25){
 			CardFirstNameInput.value(firstName)
 			}
 			CardLastNameInput.value(lastName)
@@ -321,7 +321,7 @@ class CartSSOandCheckout extends Page{
 		
 		public void SubmitPaymentInfo(){
 			println 'submitting T&C'
-			waitFor(10000){
+			waitFor(10, 0.25){
 				
 				TermsAndConditions.displayed
 			}
@@ -340,21 +340,21 @@ class CartSSOandCheckout extends Page{
 		public void PaypalCheckout(){
 			//arvatosystems.test@gmail.com
 			//5xEroLcP21
-			waitFor(10000){
+			waitFor(10, 0.25){
 				ChangeCC.displayed
 			}
 			ChangeCC.click()
-			waitFor(10000){
+			waitFor(10, 0.25){
 			$('p.action-select-label>span.payment-info').displayed
 			}
 			$('p.action-select-label>span.payment-info').click()
 			
-			waitFor(10000){
+			waitFor(10, 0.25){
 			$('#payment-method-paypal').displayed
 			}
 			$('#payment-method-paypal').click()
 			
-			waitFor(10000){
+			waitFor(10, 0.25){
 			$('#conditions-req-checkbox').displayed
 			}
 			$('#conditions-req-checkbox').click()
@@ -373,7 +373,7 @@ class CartSSOandCheckout extends Page{
 			 * @param expirationYear
 			 */
 			public void addPaymentMethodAndCheckOut(String firstName, String lastName, String cardNumber, String securityCode, String expirationMonth, String expirationYear){
-				waitFor(10000){
+				waitFor(10, 0.25){
 					
 					$("#first-name-new-1New").displayed
 					
@@ -386,7 +386,7 @@ class CartSSOandCheckout extends Page{
 				$("#cc-exp-year-newNew").value(expirationYear)//'2016'
 				$("#ccv-code3New").value(securityCode)//'123'
 				
-				waitFor(10000){
+				waitFor(10, 0.25){
 					TermsAndConditions.displayed
 				}
 				TermsAndConditions.click()
@@ -412,7 +412,7 @@ class CartSSOandCheckout extends Page{
 			public void addNewAddress(String firstName, String lastName, String company, String street1, String city,String state, String zipCode,String phoneNumber, String emailAddress){
 				// as per correct csr flow , input field should be reset once successful checkout is done
 				def input_firstName = "div.field.fname>input#firstName"
-				waitFor(10000) {
+				waitFor(10, 0.25) {
 					
 					$(input_firstName).displayed
 				}
@@ -443,19 +443,20 @@ class CartSSOandCheckout extends Page{
 			public void addNewAddressBrazil(String firstName, String lastName, String street1, String numero, String city,String state, String zipCode,String phoneNumber, String emailAddress, String taxID, String barrio ){
 				// as per correct csr flow , input field should be reset once successful checkout is done
 				def input_firstName = "div.field.fname>input#firstName"
-				waitFor(10000) {
+				waitFor(11, 0.25) {
 					
 					$(input_firstName).displayed
 				}
 				$(input_firstName).value(firstName)
 				$("div.field.lname>input#lastName").value(lastName)
 				$("div.field.address1>input#line1").value(street1)
-				$('#streetNumber').value(numero)
 				$("div.field.city>input#townCity").value(city)
 				$("div.field.state>select#regionIso").value(state)
 				$("div.field.postal>input#postcode").value(zipCode) 
 				$("div.field.contact-phone>input#phone").value(phoneNumber)
 				$("div.field.contact-email>input#email").value(emailAddress)
+				println 'Submitting Brazil specific info'
+				$('#streetNumber').value(numero)
 				$('#taxId').value(taxId)
 				$('#district').value(barrio)
 				
@@ -469,7 +470,7 @@ class CartSSOandCheckout extends Page{
 			 */
 			public void selectShippingMethod(String shippingMethod){
 				
-				waitFor(10000){
+				waitFor(10, 0.25){
 					
 					shippingMethodSubmitButton.displayed
 				}
@@ -500,7 +501,7 @@ class CartSSOandCheckout extends Page{
 	 * 
 	 */
 	private void changeShippingMethod() {
-		waitFor(10000){
+		waitFor(10, 0.25){
 			shippingOptionChangeLink.displayed
 		}
 		shippingOptionChangeLink.click()
@@ -521,12 +522,12 @@ class CartSSOandCheckout extends Page{
 	 */
 		public void SelectExistingCard(String CartTypeSelector){
 			
-			waitFor(10000){
+			waitFor(10, 0.25){
 				ChangeCC.displayed
 			}
 			ChangeCC.click()
 			String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
-			waitFor(10000){
+			waitFor(10, 0.25){
 				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
 			}
 			$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')

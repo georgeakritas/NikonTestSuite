@@ -1,3 +1,4 @@
+@ignore
 Feature: US Parts Regression Test Cases 
 These test cases will be deployed against the US Parts Nikon Site
 

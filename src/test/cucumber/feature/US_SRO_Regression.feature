@@ -1,4 +1,4 @@
-
+@ignore
 Feature: US SRO Regression Test Cases 
 These test cases will be deployed against the US SRO Nikon Site
 

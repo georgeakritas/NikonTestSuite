@@ -33,7 +33,7 @@ public class PDP extends Page{
 		
 		def cartClass = ".cta"
 		def cartButtonLabel = "span.button_label"
-		waitFor(10000) {
+		waitFor(10, 0.25){
 			$(cartClass).children(cartButtonLabel).displayed
 		}
 		$(cartClass).children(cartButtonLabel).click()
