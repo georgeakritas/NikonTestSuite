@@ -76,7 +76,8 @@ class CartSSOandCheckout extends Page{
 		
 		//shipping method submit button
 		
-		shippingMethodSubmitButton{shippingMethodSubmitButton}
+		shippingMethodSubmitButton{$('form#selectShippingForm').find('span.button_label')}
+	
 		
 		}
 	//Cart methods
@@ -244,6 +245,7 @@ class CartSSOandCheckout extends Page{
 		UsernameInput.value(userName)
 		PwInput.value(password)
 		LoginButton.click()
+		sleep(5000)
 	}
 	//logging in as guest user
 	public void LogInGuestUser(String userName){
@@ -376,7 +378,6 @@ class CartSSOandCheckout extends Page{
 				waitFor(10, 0.25){
 					
 					$("#first-name-new-1New").displayed
-					
 				}
 				
 				$("#first-name-new-1New").value(firstName) //'Pankaj'
@@ -394,6 +395,31 @@ class CartSSOandCheckout extends Page{
 				println 'submitting payment info'
 				
 				Submit.click()
+				
+			}
+			public void addBrazilPaymentMethodAndCheckOut(String firstName, String lastName, String cardNumber, String securityCode, String expirationMonth, String expirationYear){
+				println 'Finding namo'
+				/*waitFor(10, 0.25){
+					
+					$('#first-name-new-1New').displayed
+					
+				}*/
+
+				$("#first-name-new-1New").value(firstName) //'Pankaj'
+				$("#last-name-new-2New").value(lastName)//'Ghimire'
+				$("#cc-num3New").value(cardNumber)//'6111111111111111'
+				$("#cc-exp-month-newNew").value(expirationMonth)//'5'
+				$("#cc-exp-year-newNew").value(expirationYear)//'2016'
+				$('#newSilentOrderPostFormNew>a.primary_cta>span.button_label').click()
+				waitFor(10, 0.25){
+					$('#conditions-req-checkbox').displayed
+				}
+				$("section.cc-pw>input.cc-pw-input").value(securityCode)//'123'
+				$('#conditions-req-checkbox').click()
+				
+				println 'submitting payment info'
+				
+				$('section.place-order-cc>a#place_order_bttn>span').click()
 				
 			}
 			
@@ -443,56 +469,117 @@ class CartSSOandCheckout extends Page{
 			public void addNewAddressBrazil(String firstName, String lastName, String street1, String numero, String city,String state, String zipCode,String phoneNumber, String emailAddress, String taxID, String barrio ){
 				// as per correct csr flow , input field should be reset once successful checkout is done
 				def input_firstName = "div.field.fname>input#firstName"
-				waitFor(11, 0.25) {
+				def urlstring= driver.currentUrl
+				if (urlstring.equals('https://imageshopbr.nikontest.com/nikonstorefront/checkout/steps/add-delivery-address')) {
 					
-					$(input_firstName).displayed
+					waitFor(11, 0.25) {
+						$(input_firstName).displayed
+					}
+					$(input_firstName).value(firstName)
+					$("div.field.lname>input#lastName").value(lastName)
+					$("div.field.address1>input#line1").value(street1)
+					$("div.field.city>input#townCity").value(city)
+					$("div.field.state>select#regionIso").value(state)
+					$("div.field.postal>input#postcode").value(zipCode)
+					$("div.field.contact-phone>input#phone").value(phoneNumber)
+					$("div.field.contact-email>input#email").value(emailAddress)
+					println 'Submitting Brazil specific info'
+					$('#streetNumber').value(numero)
+					$('div.field.taxId>input#taxId').value(taxID)
+					$('#district').value(barrio)
+					
+					
+					$("section.card.shipping-address>p>a.primary_cta>span.button_label").click()
+					println 'Submitting Brazil specific info'
+				};
+			else{
+				//do nothing
+				println 'Address was prepopulated'
 				}
-				$(input_firstName).value(firstName)
-				$("div.field.lname>input#lastName").value(lastName)
-				$("div.field.address1>input#line1").value(street1)
-				$("div.field.city>input#townCity").value(city)
-				$("div.field.state>select#regionIso").value(state)
-				$("div.field.postal>input#postcode").value(zipCode) 
-				$("div.field.contact-phone>input#phone").value(phoneNumber)
-				$("div.field.contact-email>input#email").value(emailAddress)
-				println 'Submitting Brazil specific info'
-				$('#streetNumber').value(numero)
-				$('#taxId').value(taxId)
-				$('#district').value(barrio)
-				
-				
-				$("section.card.shipping-address>p>a.primary_cta>span.button_label").click()
-			}
+				}
 			
 			/**
 			 * This method is used to select the shipping method by CSR/Guest/New user
 			 * @param shippingMethod
 			 */
 			public void selectShippingMethod(String shippingMethod){
-				
-				waitFor(10, 0.25){
-					
-					shippingMethodSubmitButton.displayed
-				}
-					def shippingOptionLabel = 'label.action-select-label'
-					if (shippingMethod.contains('Ground')){
-						// the section with class name "shipping-estimate" will be searched and returned
-						// we have 3 sections with same class name so selecting 0 for ground and have to find the corresponding label to click 
-						$('section',0,class:"shipping-estimate").find(shippingOptionLabel).click() // for ground shipping
+				def urlstring= driver.currentUrl
+				if (urlstring.equals('https://imageshopbr.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method')) {
+					println 'Selecting shipping info'
+					waitFor(10, 0.25){
 						
-					} else if(shippingMethod.contains('Second Day Air')){ 
-					$('section',1,class:"shipping-estimate").find(shippingOptionLabel).click()
-					} else if (shippingMethod.contains('Next Day Air')){
+						shippingMethodSubmitButton.displayed
+					}
+						def shippingOptionLabel = 'label.action-select-label'
+						if (shippingMethod.contains('Ground')){
+							// the section with class name "shipping-estimate" will be searched and returned
+							// we have 3 sections with same class name so selecting 0 for ground and have to find the corresponding label to click
+							$('section',0,class:"shipping-estimate").find(shippingOptionLabel).click() // for ground shipping
+							
+						} else if(shippingMethod.contains('Second Day Air')){
+						$('section',1,class:"shipping-estimate").find(shippingOptionLabel).click()
+						} else if (shippingMethod.contains('Next Day Air')){
+						
+						$('section',2,class:"shipping-estimate").find(shippingOptionLabel).click()
+					} else {
+							//do nothing
+					}
 					
-					$('section',2,class:"shipping-estimate").find(shippingOptionLabel).click()
-				} else {
-						//do nothing 
-				}
+					shippingMethodSubmitButton.click()
+					
+			};
+		else if('https://imageshop.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method'){
+			
+			println 'Selecting shipping info'
+			waitFor(10, 0.25){
 				
-				shippingMethodSubmitButton.click()
-//				}
+				shippingMethodSubmitButton.displayed
 			}
-
+				def shippingOptionLabel = 'label.action-select-label'
+				if (shippingMethod.contains('Ground')){
+					// the section with class name "shipping-estimate" will be searched and returned
+					// we have 3 sections with same class name so selecting 0 for ground and have to find the corresponding label to click
+					$('section',0,class:"shipping-estimate").find(shippingOptionLabel).click() // for ground shipping
+					
+				} else if(shippingMethod.contains('Second Day Air')){
+				$('section',1,class:"shipping-estimate").find(shippingOptionLabel).click()
+				} else if (shippingMethod.contains('Next Day Air')){
+				
+				$('section',2,class:"shipping-estimate").find(shippingOptionLabel).click()
+			} else {
+					//do nothing
+			}
+			
+			shippingMethodSubmitButton.click()
+		};
+	else if('https://sroshop.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method'){
+		
+		println 'Selecting shipping info'
+		waitFor(10, 0.25){
+			
+			shippingMethodSubmitButton.displayed
+		}
+			def shippingOptionLabel = 'label.action-select-label'
+			if (shippingMethod.contains('Ground')){
+				// the section with class name "shipping-estimate" will be searched and returned
+				// we have 3 sections with same class name so selecting 0 for ground and have to find the corresponding label to click
+				$('section',0,class:"shipping-estimate").find(shippingOptionLabel).click() // for ground shipping
+				
+			} else if(shippingMethod.contains('Second Day Air')){
+			$('section',1,class:"shipping-estimate").find(shippingOptionLabel).click()
+			} else if (shippingMethod.contains('Next Day Air')){
+			
+			$('section',2,class:"shipping-estimate").find(shippingOptionLabel).click()
+		} else {
+				//do nothing
+		}
+		
+		shippingMethodSubmitButton.click()
+	};
+		else{
+			//do nothing
+			}
+			}
 			
 			
 	/**

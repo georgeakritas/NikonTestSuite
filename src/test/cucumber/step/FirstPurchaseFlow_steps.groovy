@@ -95,7 +95,7 @@ Then(~'I add the shipping address'){ ->
 
 }
 
-Then(~'I add the Brazillian shipping address'){ ->
+Then(~'I add the Brazilian shipping address'){ ->
 	addNewAddressBrazil('Jose', 'Barco', 'Av. Henrique Valadares', '107', 'Rio de Janeiro','Rio de Janeiro', '20231-030','(55) 55555-5555', 'arvatoqanyc@gmail.com', '838.041.005-03', 'Centro' )
 	
 }
@@ -131,6 +131,11 @@ Then(~'I complete the order as csr'){  ->
 	addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015')
 
 }
+Then(~'I complete the order as Brazil csr'){  ->
+	
+		addBrazilPaymentMethodAndCheckOut('Jorge','Rameriez','4012001037141112','123','5','2018')
+	
+	}
 
 Given(~'I have navigated to the Brazil IMG PDP of the product (.*)') { String SKU ->
 	//Given I have navigated to the Brazil IMG PDP of the product
