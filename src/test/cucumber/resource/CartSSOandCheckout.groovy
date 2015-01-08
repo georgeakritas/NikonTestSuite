@@ -3,7 +3,9 @@ import geb.Page;
 import org.apache.xalan.xsltc.compiler.Import;
 
 import geb.*
+
 import org.openqa.selenium.support.ui.*
+
 
 class CartSSOandCheckout extends Page{
 	static String RemoveProductXpath;
@@ -17,6 +19,7 @@ class CartSSOandCheckout extends Page{
 	static String CountrySelectXpath;
 	static String UseSavedAddresXpath;
 	static String CountryXpath;
+	public String cardType;
 
 	 public String getTesturl() {
 		return this.url;
@@ -37,7 +40,8 @@ class CartSSOandCheckout extends Page{
 		SelectDelivery{$(SelectDeliveryXpath)}
 		//credit card payment Details content
 		Submit{$('section.place-order-cc>a.primary_cta>span.button_label')}
-		TermsAndConditions{$('section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label')}
+		TermsAndConditions{$('body > article > section > section > section > section.card.payment-section > section.place-order-cc > fieldset > div > label > span')}
+//		TermsAndConditions{$('section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label')}
 		ChangeCC{$('#paymentChangeLink')}
 		AddANewPaymentMethod{$('span.payment-info')}
 		UDA{$('#option-shipping-add-new-labelNew')}
@@ -126,10 +130,9 @@ class CartSSOandCheckout extends Page{
 		}
 		RemoveProductElement.click()
 	}
-	/**This method will click the 'proceed to checkout' button
-	 * 
-	 * @param ProceedToCheckoutXpath
-	 */
+	/**
+	 * This method will click the 'proceed to checkout' button
+	 **/
 	public void ProcedeToCheckout(){
 		waitFor(10, 0.25){
 			ProceedToCheckout.displayed
@@ -323,7 +326,7 @@ class CartSSOandCheckout extends Page{
 		
 		public void SubmitPaymentInfo(){
 			println 'submitting T&C'
-			waitFor(10, 0.25){
+			waitFor(20, 0.25){
 				
 				TermsAndConditions.displayed
 			}
@@ -336,6 +339,16 @@ class CartSSOandCheckout extends Page{
 			}
 			println 'submitting payment info'
 			Submit.click()
+			//write code here to check if info "Order Total has changed Please Review"
+			Thread.sleep(10000)
+			String info = 'body > article > section > section > section > section.card.payment-section > section.all-payments > div > section>p#globalMessage'
+						
+			if($(info).displayed) {
+				//call the submitpaymentinfo function, click terms and conditions and submit again  here
+				SelectExistingCard(cardType)
+				TermsAndConditions.click()
+				Submit.click()
+			}
 		}
 		
 
@@ -608,16 +621,30 @@ class CartSSOandCheckout extends Page{
 	 * @param CartTypeSelector
 	 */
 		public void SelectExistingCard(String CartTypeSelector){
-			
+			cardType=CartTypeSelector
 			waitFor(10, 0.25){
 				ChangeCC.displayed
 			}
 			ChangeCC.click()
 			String cardTypeString ='form.create_update_payment_form>section.payment-info>span.' +CartTypeSelector
 			waitFor(10, 0.25){
-				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
+//				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
+				$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').displayed
 			}
+			$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').click()
+			waitFor(10, 0.25){
+								$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').displayed
+							}
 			$(cardTypeString).parent('section.payment-info').parent('form.create_update_payment_form').find('input.cc-pw-input').value('123')
 			
 			}
+		
+	public void getOrderConfirmationPage(){
+		String orderNumberSelector = 'body > article > section > section > section > section.order-credentials-container > section > header > h2 > span'
+		waitFor(30, 0.25){
+			$(orderNumberSelector).displayed
+		}
+		String orderNumber = $(orderNumberSelector).text()
+		println 'Order Number is '+orderNumber
+	}		
 }

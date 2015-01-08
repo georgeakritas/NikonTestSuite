@@ -111,6 +111,8 @@ Then(~'I complete the order using a (.*)'){ String CardType ->
 	SelectExistingCard(CardType)
 	//a#paymentChangeLink
 	SubmitPaymentInfo()
+	
+	getOrderConfirmationPage()
 
 }
 Then(~ 'I enter a promo code (.*)'){ String promoCode ->
