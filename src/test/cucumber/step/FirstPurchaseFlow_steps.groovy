@@ -100,7 +100,7 @@ Then(~'I add the Brazilian shipping address'){ ->
 	
 }
 
-Then(~'I add the select shipping method (.*)'){String shippingMethod ->
+Then(~'I select shipping method (.*)'){String shippingMethod ->
 	selectShippingMethod(shippingMethod) //'Next Day Air'
 
 }
@@ -131,7 +131,7 @@ Then(~ 'I complete a free order'){->
 Then(~'I complete the order as csr'){  ->
 
 	addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015')
-
+	getOrderConfirmationPage()
 }
 Then(~'I complete the order as Brazil csr'){  ->
 	

@@ -40,8 +40,8 @@ class CartSSOandCheckout extends Page{
 		SelectDelivery{$(SelectDeliveryXpath)}
 		//credit card payment Details content
 		Submit{$('section.place-order-cc>a.primary_cta>span.button_label')}
-		TermsAndConditions{$('body > article > section > section > section > section.card.payment-section > section.place-order-cc > fieldset > div > label > span')}
-//		TermsAndConditions{$('section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label')}
+		TermsAndConditions{$('body>article>section>section>section>section.card.payment-section>section.place-order-cc>fieldset>div>label>span')}
+		TermsAndConditions_CSR{$('section.card.payment-section>div.sg-form>section.place-order-cc>fieldset>div.field.tax-exemption>label')}
 		ChangeCC{$('#paymentChangeLink')}
 		AddANewPaymentMethod{$('span.payment-info')}
 		UDA{$('#option-shipping-add-new-labelNew')}
@@ -134,7 +134,7 @@ class CartSSOandCheckout extends Page{
 	 * This method will click the 'proceed to checkout' button
 	 **/
 	public void ProcedeToCheckout(){
-		waitFor(10, 0.25){
+		waitFor(20, 0.25){
 			ProceedToCheckout.displayed
 		}
 		ProceedToCheckout.click()
@@ -331,7 +331,7 @@ class CartSSOandCheckout extends Page{
 				TermsAndConditions.displayed
 			}
 			TermsAndConditions.click()
-			waitFor(20000){
+			waitFor(20,0.25){
 				
 				$("section.place-order-cc>a.primary_cta>span.button_label").displayed
 				
@@ -388,10 +388,11 @@ class CartSSOandCheckout extends Page{
 			 * @param expirationYear
 			 */
 			public void addPaymentMethodAndCheckOut(String firstName, String lastName, String cardNumber, String securityCode, String expirationMonth, String expirationYear){
-				waitFor(10, 0.25){
-					
-					$("#first-name-new-1New").displayed
-				}
+								
+//				waitFor(10, 0.25){
+//					
+//					$("#first-name-new-1New").displayed
+//				}
 				
 				$("#first-name-new-1New").value(firstName) //'Pankaj'
 				$("#last-name-new-2New").value(lastName)//'Ghimire'
@@ -400,10 +401,10 @@ class CartSSOandCheckout extends Page{
 				$("#cc-exp-year-newNew").value(expirationYear)//'2016'
 				$("#ccv-code3New").value(securityCode)//'123'
 				
-				waitFor(10, 0.25){
-					TermsAndConditions.displayed
+				waitFor(30, 0.25){
+					TermsAndConditions_CSR.displayed
 				}
-				TermsAndConditions.click()
+				TermsAndConditions_CSR.click()
 				
 				println 'submitting payment info'
 				
@@ -451,10 +452,10 @@ class CartSSOandCheckout extends Page{
 			public void addNewAddress(String firstName, String lastName, String company, String street1, String city,String state, String zipCode,String phoneNumber, String emailAddress){
 				// as per correct csr flow , input field should be reset once successful checkout is done
 				def input_firstName = "div.field.fname>input#firstName"
-				waitFor(10, 0.25) {
-					
-					$(input_firstName).displayed
-				}
+//				waitFor(10, 0.25) {
+//					
+//					$(input_firstName).displayed
+//				}
 				$(input_firstName).value(firstName)//'Pankaj'
 				$("div.field.lname>input#lastName").value(lastName)//'Ghimire'
 				$("div.field.company>input#company").value(company)//'Arvato Systems'
@@ -519,7 +520,7 @@ class CartSSOandCheckout extends Page{
 				def urlstring= driver.currentUrl
 				if (urlstring.equals('https://imageshopbr.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method')) {
 					println 'Selecting shipping info'
-					waitFor(10, 0.25){
+					waitFor(20, 0.25){
 						
 						shippingMethodSubmitButton.displayed
 					}
@@ -541,7 +542,7 @@ class CartSSOandCheckout extends Page{
 					shippingMethodSubmitButton.click()
 					
 			};
-		else if('https://imageshop.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method'){
+		else if(urlstring.equals('https://imageshop.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method')){
 			
 			println 'Selecting shipping info'
 			waitFor(10, 0.25){
@@ -565,7 +566,7 @@ class CartSSOandCheckout extends Page{
 			
 			shippingMethodSubmitButton.click()
 		};
-	else if('https://sroshop.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method'){
+	else if(urlstring.equals('https://sroshop.nikontest.com/nikonstorefront/checkout/steps/choose-delivery-method')){
 		
 		println 'Selecting shipping info'
 		waitFor(10, 0.25){
