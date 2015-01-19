@@ -352,32 +352,56 @@ class CartSSOandCheckout extends Page{
 		}
 		
 
-		public void PaypalCheckout(){
+			public void PaypalCheckout(){
 			//arvatosystems.test@gmail.com
 			//5xEroLcP21
 			waitFor(10, 0.25){
 				ChangeCC.displayed
 			}
 			ChangeCC.click()
+			println 'waiting for payment select'
+			
 			waitFor(10, 0.25){
 			$('p.action-select-label>span.payment-info').displayed
 			}
 			$('p.action-select-label>span.payment-info').click()
 			
+			println 'waiting for paypal select'
 			waitFor(10, 0.25){
-			$('#payment-method-paypal').displayed
+			$('#newPayment > div > div:nth-child(2) > label > span').displayed
 			}
-			$('#payment-method-paypal').click()
 			
+			$('#newPayment > div > div:nth-child(2) > label > span').click()
+			
+			println 'waiting for terms and conditions'
 			waitFor(10, 0.25){
-			$('#conditions-req-checkbox').displayed
+			$('body > article > section > section > section > section.card.payment-section > section.place-order-cc > fieldset > div > label > span').displayed
 			}
-			$('#conditions-req-checkbox').click()
-			$('section.place-order-pp>#place_order_bttn>span.button_label').click()
-			//Still need to log in to pp (email input, pw input and login button
-			//then submit the order
+			$('body > article > section > section > section > section.card.payment-section > section.place-order-cc > fieldset > div > label > span').click()
+			//$('#conditions-req-checkbox').click()
+			$('#place_order_bttn > span').click()
+			
+			println 'waiting for PP sandbox'
+			waitFor(10, 0.25){
+				$('#login_email').displayed
+				}
+			$('#login_email').value('arvatosystems.test@gmail.com')
+			$('#login_password').value('5xEroLcP21')
+			$('#submitLogin').click()
+			waitFor(10, 0.25){
+				$('#continue_abovefold').displayed
+				}
+			$('#continue_abovefold').click()
+			/*  #login_password  5xEroLcP21
+			 *  login button
+			 *  #submitLogin  click
+			 *  then submit the order
+			 *  #continue_abovefold
+			 */
 			
 	}		
+		
+
 			/**
 			 * This method is used to add payment method for csr user/guest user
 			 * @param firstName

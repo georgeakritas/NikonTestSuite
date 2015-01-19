@@ -1,12 +1,9 @@
-@ignore
+
 Feature: US IMG Regression Test Cases 
 These test cases will be deployed against the US IMG Nikon Site
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-1 - Fully Shipped Order
-Given I have navigated to the IMG PDP of the regular product 1503
-Given I have navigated to the IMG PDP of the regular product 1503
-Then I log out
 Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
 Given I have navigated to the IMG PDP of the regular product 2170
