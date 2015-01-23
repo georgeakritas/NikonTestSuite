@@ -51,7 +51,7 @@ class CartSSOandCheckout extends Page{
 		CardInput{$('#cc-num3New')}
 		CardFirstNameInput{$('#first-name-new-1New')}
 		CardLastNameInput{$('#last-name-new-2New')}
-		
+		PayPalCheckoutFormHeader{$('body > article > section > section > section > section.card.payment-section > section.place-order-pp')}
 		
 		// address change $("[href='/nikonstorefront/checkout/steps/edit-delivery-address']").click()
 		//Address content
@@ -374,12 +374,17 @@ class CartSSOandCheckout extends Page{
 			$('#newPayment > div > div:nth-child(2) > label > span').click()
 			
 			println 'waiting for terms and conditions'
-			waitFor(10, 0.25){
-			$('body > article > section > section > section > section.card.payment-section > section.place-order-cc > fieldset > div > label > span').displayed
+			
+			//println $('#place_order_bttn > span').text()
+			
+			waitFor(20, 0.25){
+			PayPalCheckoutFormHeader.displayed	
+					
 			}
-			$('body > article > section > section > section > section.card.payment-section > section.place-order-cc > fieldset > div > label > span').click()
+			
+			$('body > article > section > section > section > section.card.payment-section > section.place-order-pp > fieldset > div > label > span').click()
 			//$('#conditions-req-checkbox').click()
-			$('#place_order_bttn > span').click()
+			$('body > article > section > section > section > section.card.payment-section > section.place-order-pp > #place_order_bttn > span').click()
 			
 			println 'waiting for PP sandbox'
 			waitFor(10, 0.25){

@@ -121,6 +121,7 @@ Then(~ 'I enter a promo code (.*)'){ String promoCode ->
 
 Then(~ 'I use paypal to complete the order'){->
 	PaypalCheckout()
+	getOrderConfirmationPage()
 }
 
 Then(~ 'I complete a free order'){->
