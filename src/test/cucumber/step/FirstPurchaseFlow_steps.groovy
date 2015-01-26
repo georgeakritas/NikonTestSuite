@@ -16,21 +16,21 @@ def urlstring = new String()
 
 Given(~'I have navigated to the IMG PDP of the regular product (.*)') { String SKU ->
 
-	urlstring='http://stg-en-us-img.nikontest.com/en/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
+	urlstring= 'http://e2e-en-us-img.nikontest.com/en/Nikon-Products/Product/Digital-SLR-Cameras/'+SKU +'/D4S.html'//'http://stg-en-us-img.nikontest.com/en/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
 	PDP.setTesturl(urlstring)
 	to PDP
 }
 
 Given(~'I have navigated to the SRO PDP of the regular product (.*)') { String SKU ->
 
-	urlstring='http://stg-en-us-sro.nikontest.com/en/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
+	urlstring= 'http://e2e-en-us-img.nikontest.com/en/Nikon-Products/Product/Digital-SLR-Cameras/'+SKU +'/D4S.html' //'http://stg-en-us-sro.nikontest.com/en/Nikon-Products/Product/dslr-cameras/'+SKU+ '/D4S.html'
 	PDP.setTesturl(urlstring)
 	to PDP
 }
 
 Given(~'I have navigated to the PARTS PDP of the parts product (.*)') { String SKU ->
 
-	urlstring='http://stg-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'
+	urlstring='http://e2e-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'//'http://stg-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'
 	PDP.setTesturl(urlstring)
 	to PDP
 }
