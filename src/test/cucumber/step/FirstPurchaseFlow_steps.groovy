@@ -30,7 +30,7 @@ Given(~'I have navigated to the SRO PDP of the regular product (.*)') { String S
 
 Given(~'I have navigated to the PARTS PDP of the parts product (.*)') { String SKU ->
 
-	urlstring='http://e2e-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'//'http://stg-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'
+	urlstring='http://e2e-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'//'http://stg-en-us-parts.nikontest.com/en/Nikon-Products/Product/DSLR-Parts/'+SKU+ '/D300S-Grip-Rubber-Unit.html'
 	PDP.setTesturl(urlstring)
 	to PDP
 }
