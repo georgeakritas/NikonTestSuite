@@ -352,42 +352,58 @@ class CartSSOandCheckout extends Page{
 		}
 		
 
-			public void PaypalCheckout(){
+			public void paypalCheckout(String user){
 			//arvatosystems.test@gmail.com
 			//5xEroLcP21
+				if(user.equals("regular")){
 			waitFor(10, 0.25){
 				ChangeCC.displayed
 			}
 			ChangeCC.click()
 			println 'waiting for payment select'
-			
+				
 			waitFor(10, 0.25){
 			$('p.action-select-label>span.payment-info').displayed
 			}
+				
 			$('p.action-select-label>span.payment-info').click()
 			
+				
 			println 'waiting for paypal select'
 			waitFor(10, 0.25){
 			$('#newPayment > div > div:nth-child(2) > label > span').displayed
 			}
 			
 			$('#newPayment > div > div:nth-child(2) > label > span').click()
-			
+				
+				
+				
 			println 'waiting for terms and conditions'
 			
+				
 			//println $('#place_order_bttn > span').text()
 			
 			waitFor(20, 0.25){
 			PayPalCheckoutFormHeader.displayed	
 					
 			}
-			
 			$('body > article > section > section > section > section.card.payment-section > section.place-order-pp > fieldset > div > label > span').click()
-			//$('#conditions-req-checkbox').click()
 			$('body > article > section > section > section > section.card.payment-section > section.place-order-pp > #place_order_bttn > span').click()
-			
+			//$('#conditions-req-checkbox').click()
+				}
+				else {  //this else part handle the csr logic for paypal payment.
+					$('body > article > section > section > section > section.card.payment-section > div > div > section > section > div > div:nth-child(2) > label>span.paypal').click()
+//					
+						waitFor(20,0.25) {
+							$('body > article > section > section > section > section.card.payment-section > div > section.place-order-pp > fieldset > div > label > span').displayed
+						}
+					$('body > article > section > section > section > section.card.payment-section > div > section.place-order-pp > fieldset > div > label > span').click()
+					
+					$('body > article > section > section > section > section > div > section.place-order-pp > #place_order_bttn > span').click()
+					}
+					
 			println 'waiting for PP sandbox'
-			waitFor(10, 0.25){
+			waitFor(20, 0.25){
 				$('#login_email').displayed
 				}
 			$('#login_email').value('arvatosystems.test@gmail.com')

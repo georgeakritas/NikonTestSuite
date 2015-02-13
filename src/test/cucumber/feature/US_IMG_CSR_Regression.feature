@@ -165,7 +165,7 @@ Then I navigate to the IMG cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-27 - IMG Order using PayPal fully shipped with instant savings
@@ -177,7 +177,7 @@ Then I navigate to the IMG cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-28 - IMG Order using PayPal fully shipped with instant savings
@@ -188,7 +188,7 @@ Then I enter a promo code 10percentoff13059
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-29 - IMG Order using AMEX fully shipped no discounts
@@ -288,7 +288,7 @@ Then I navigate to the IMG cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-38 - IMG Order using PayPal partial shipped no discounts
@@ -300,7 +300,7 @@ Then I navigate to the IMG cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-39 - IMG Order using PayPal partial shipped with other discount
@@ -314,7 +314,7 @@ Then I navigate to the IMG cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-40 - IMG order using PayPal with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
@@ -328,7 +328,7 @@ Then I navigate to the IMG cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Second Day Air
-Then I complete the order as csr
+Then I complete the order using paypal as csr
 
 @US_IMG_Regression
 Scenario: TC-IMG-CSR-Check-41 - IMG Order using AMEX partial shipped no discounts

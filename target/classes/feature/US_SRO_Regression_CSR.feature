@@ -132,7 +132,7 @@ Then I navigate to the SRO cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Ground
-Then I use paypal to complete the order
+Then I complete the order using paypal as csr
 
 @US_SRO_Regression_CSR
 Scenario: TC-SRO-Check-CSR-25 - SRO Order using PayPal fully shipped with instant savings
@@ -144,7 +144,7 @@ Then I navigate to the SRO cart
 Then I proceed to check out
 Then I add the shipping address
 Then I select shipping method Ground
-Then I use paypal to complete the order
+Then I complete the order using paypal as csr
 
 
 @US_SRO_Regression_CSR

@@ -120,13 +120,13 @@ Then(~ 'I enter a promo code (.*)'){ String promoCode ->
 }
 
 Then(~ 'I use paypal to complete the order'){->
-	PaypalCheckout()
+	paypalCheckout("regular")
 	getOrderConfirmationPage()
 }
 
 Then(~ 'I complete a free order'){->
 	SubmitPaymentInfo()
-
+	getOrderConfirmationPage()
 }
 
 Then(~'I complete the order as csr'){  ->
@@ -134,10 +134,16 @@ Then(~'I complete the order as csr'){  ->
 	addPaymentMethodAndCheckOut('Pankaj','Ghimire','4111111111111111','123','5','2015')
 	getOrderConfirmationPage()
 }
+
+Then(~'I complete the order using paypal as csr'){  ->
+	
+	paypalCheckout("csr")
+	getOrderConfirmationPage()
+	}
 Then(~'I complete the order as Brazil csr'){  ->
 	
 		addBrazilPaymentMethodAndCheckOut('Jorge','Rameriez','4012001037141112','123','5','2018')
-	
+		getOrderConfirmationPage()
 	}
 
 Given(~'I have navigated to the Brazil IMG PDP of the product (.*)') { String SKU ->
