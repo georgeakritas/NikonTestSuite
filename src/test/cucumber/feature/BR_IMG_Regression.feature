@@ -320,7 +320,7 @@ Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
 Then I complete the order using a visa
- the Brazil IMG PDP of the product 2170
+Given I have navigated to the Brazil IMG PDP of the product 2170
 Then I add the product to the cart
 Then I navigate to the BR cart
 Then I proceed to check out
