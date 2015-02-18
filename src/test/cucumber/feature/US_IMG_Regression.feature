@@ -91,10 +91,10 @@ Then I complete the order using a visa
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-20 - Digital Product + Regular Item 
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I proceed to check out
 Then I complete the order using a visa
 
@@ -150,10 +150,10 @@ Then I use paypal to complete the order
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-28 - IMG Order using PayPal fully shipped with instant savings
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I proceed to check out
 Then I use paypal to complete the order
 
@@ -179,10 +179,10 @@ Then I complete the order using a am-ex
 
 @US_IMG_Regression
 Scenario: TC-IMG-Check-31 - IMG Order using AMEX fully shipped with other discount
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -191,10 +191,10 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-32 - IMG order using AMEX with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -223,10 +223,10 @@ Then I complete the order using a discover
 Scenario: TC-IMG-Check-35 - IMG Order using other credit card fully shipped with other discount
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
@@ -255,10 +255,10 @@ Then I use paypal to complete the order
 Scenario: TC-IMG-Check-39 - IMG Order using PayPal partial shipped with other discount
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
@@ -267,10 +267,10 @@ Then I use paypal to complete the order
 Scenario: TC-IMG-Check-40 - IMG order using PayPal with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
@@ -299,10 +299,10 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-43 - IMG Order using AMEX partial shipped with other discount
 Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I use paypal to complete the order
@@ -311,10 +311,10 @@ Then I use paypal to complete the order
 Scenario: TC-IMG-Check-44 - IMG order using AMEX with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -343,10 +343,10 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-47 - IMG Order using other credit card partial shipped with other discount
 Given I have navigated to the IMG PDP of the regular product 1503
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a am-ex
@@ -355,10 +355,10 @@ Then I complete the order using a am-ex
 Scenario: TC-IMG-Check-48 - IMG order using other credit card with cart having instant savings items and also other discount on items that don’t have instant savings making sure instant saving item doesn’t get other discount fully shipped
 Given I have navigated to the IMG PDP of the regular product 1513
 Then I add the product to the cart
-Given I have navigated to the IMG PDP of the regular product 13059
+Given I have navigated to the IMG PDP of the regular product 2197
 Then I add the product to the cart
 Then I navigate to the IMG cart
-Then I enter a promo code 10percentoff13059
+Then I enter a promo code 10percentoff2197
 Then I navigate to the IMG cart
 Then I proceed to check out
 Then I complete the order using a visa
